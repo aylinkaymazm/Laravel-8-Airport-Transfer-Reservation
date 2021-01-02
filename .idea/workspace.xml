@@ -1,71 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="admin template added end essets implemented">
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/calendar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/chartjs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/chartjs2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/contacts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/css/maps/jquery-jvectormap-2.0.3.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/e_commerce.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/echarts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/fixed_footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/fixed_sidebar.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/form_advanced.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/form_buttons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/form_upload.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/form_validation.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/form_wizards.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/general_elements.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/glyphicons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/icons.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/american-express.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/cropper.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/img.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/inbox.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/mastercard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/media.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/paypal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/picture.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/prod-1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/prod-2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/prod-3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/prod-4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/prod-5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/images/visa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/inbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/index2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/index3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/invoice.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/js/datepicker/daterangepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/js/moment/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/level2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/map.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/media_gallery.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/morisjs.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/other_charts.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/page_403.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/page_404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/page_500.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/plain_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/pricing_tables.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/project_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/projects.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/tables.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/tables_dynamic.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/typography.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/widgets.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/production/xx.html" afterDir="false" />
+    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="admin template login page">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,6 +152,9 @@
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
     </include_path>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
   <component name="ProjectId" id="1lqLWvsMcP7Lf5dmDlORcNo2IE3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -217,10 +165,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/home" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -260,7 +210,9 @@
       <workItem from="1608938585347" duration="4134000" />
       <workItem from="1608981426093" duration="1895000" />
       <workItem from="1609506802701" duration="10200000" />
-      <workItem from="1609528467132" duration="11840000" />
+      <workItem from="1609528467132" duration="12306000" />
+      <workItem from="1609591256225" duration="201000" />
+      <workItem from="1609591493292" duration="18864000" />
     </task>
     <task id="LOCAL-00001" summary="template added">
       <created>1608588525500</created>
@@ -283,7 +235,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609534720176</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="admin template login page">
+      <created>1609551418151</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609551418151</updated>
+    </task>
+    <task id="LOCAL-00005" summary="admin template login page">
+      <created>1609551696939</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609551696939</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,17 +272,7 @@
     <MESSAGE value="template added" />
     <MESSAGE value="admin template added" />
     <MESSAGE value="admin template added end essets implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin template added end essets implemented" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/admin/_content.blade.php</url>
-          <line>110</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="admin template login page" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin template login page" />
   </component>
 </project>

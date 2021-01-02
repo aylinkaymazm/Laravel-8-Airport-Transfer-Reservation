@@ -10,9 +10,12 @@
         <img src="{{ asset('assets')}}/admin/production/images/img.jpg" alt="..." class="img-circle profile_img">
     </div>
     <div class="profile_info">
+        @auth
         <span>Welcome,</span>
-        <h2>John Doe</h2>
+        <a href="#" class="d-block">{{Auth::user()->name}}</a>
+        @endauth
     </div>
+
 </div>
 <!-- /menu profile quick info -->
 
