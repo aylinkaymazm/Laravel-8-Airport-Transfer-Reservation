@@ -1,16 +1,3 @@
-<!-- menu profile quick info -->
-<div class="profile clearfix">
-    <div class="profile_pic">
-        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
-    </div>
-    <div class="profile_info">
-        <span>Welcome,</span>
-        <h2>John Doe</h2>
-    </div>
-</div>
-<!-- /menu profile quick info -->
-
-<br />
 
 <!-- sidebar menu -->
 <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
@@ -145,7 +132,7 @@
             <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                        <img src="images/img.jpg" alt="">John Doe
+                        <img src="{{ asset('assets')}}/admin/production/images/img.jpg" alt="">John Doe
                     </a>
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item"  href="javascript:;"> Profile</a>
@@ -166,7 +153,7 @@
                     <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                         <li class="nav-item">
                             <a class="dropdown-item">
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                <span class="image"><img src="{{ asset('assets')}}/admin/production/images/img.jpg" alt="Profile Image" /></span>
                                 <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -178,7 +165,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="dropdown-item">
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                <span class="image"><img src="{{ asset('assets')}}/admin/production/images/img.jpg" alt="Profile Image" /></span>
                                 <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -190,7 +177,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="dropdown-item">
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                <span class="image"><img src="{{ asset('assets')}}/admin/production/images/img.jpg" alt="Profile Image" /></span>
                                 <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -202,7 +189,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="dropdown-item">
-                                <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                <span class="image"><img src="{{ asset('assets')}}/admin/production/images/img.jpg" alt="Profile Image" /></span>
                                 <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>

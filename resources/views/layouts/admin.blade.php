@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <link rel="icon" href="{{ asset('assets') }}/admin/production/images/favicon.ico" type="image/ico" />
 
     <title>@yield('title') </title>
 
@@ -34,11 +34,17 @@
 
 <body class="nav-md">
 <div class="container body">
-    <div class="col-md-3 left_col">
-    @include('admin._header')
-    @include('admin._sidebar')
-    @yield('content')
-    @include('admin._footer')
-    @yield('footer')
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                @include('admin._header')
+                @include('admin._sidebar')
+                @yield('content')
+                @include('admin._footer')
+                @yield('footer')
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
