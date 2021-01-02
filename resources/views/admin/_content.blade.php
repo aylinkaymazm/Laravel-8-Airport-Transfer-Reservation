@@ -109,8 +109,6 @@
     <br />
 
     <div class="row">
-
-
         <div class="col-md-4 col-sm-4 ">
             <div class="x_panel tile fixed_height_320">
                 <div class="x_title">
@@ -346,7 +344,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
 
