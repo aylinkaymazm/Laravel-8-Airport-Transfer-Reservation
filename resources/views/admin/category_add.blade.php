@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Panel add Page')
+@section('title', 'Admin Panel Add Page')
 
 @section('content')
     <!-- page content -->
@@ -72,7 +72,7 @@
                                                 <label class="control-label col-md-3 col-sm-3 ">Parent</label>
 
                                                 <select class="form-control" name="parent_id">
-                                                    <option selected="selected">Main Category</option>,
+                                                    <option selected="selected">Main Category</option>
                                                     @foreach ( $datalist as $rs )
                                                         <option value="{{$rs->id}}">{{$rs->title}}</option>
                                                     @endforeach
@@ -82,7 +82,7 @@
                                             <div class="form-group row ">
                                                 <label class="control-label col-md-3 col-sm-3 ">Title</label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <input type="text" class="form-control" name="title">
+                                                    <input type="text" id="title" class="form-control" name="title">
                                                 </div>
                                             </div>
 

@@ -66,7 +66,12 @@
                                                         <td>{{ $rs->title}}</td>
                                                         <td>{{ $rs->quantity}}</td>
                                                         <td>{{ $rs->price}}</td>
-                                                        <td>{{ $rs->image}}</td>
+                                                        <td>
+                                                            @if ($rs->image)
+                                                                <img src="{{Storage::url($rs->image)}}" height="30" alt="">
+                                                            @endif
+
+                                                        </td>
                                                         <td>{{ $rs->status}}</td>
                                                         <td><a href="{{route('admin_product_edit',['id' => $rs->id])}}" ><i class="fa fa-pencil-square-o"></i> Edit</a> </td>
                                                         <td><a href="{{route('admin_product_delete',['id' => $rs->id])}}" onclick="return confirm('Delete!! are u sure?')" ><i class="fa fa-close"></i></a></td>
@@ -155,4 +160,14 @@
     <script src="{{ asset('assets') }}/admin/build/js/custom.min.js"></script>
 
 
+    <script>
+        $('#datatable-fixed-header').dataTable( {
+            paging: false
+        });
+
+
+        $('#datatable-fixed-header').dataTable( {
+            searching: false
+        });
+    </script>
 @endsection

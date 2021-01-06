@@ -1,18 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="admin category update">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Reservation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_210402_create_reservations_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_214956_reservation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_224141_create_products_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_04_224733_product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/product.blade.php" afterDir="false" />
+    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="reservation ekleniyor işlem 3">
+      <change afterPath="$PROJECT_DIR$/TEMPS/font/summernote.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/font/summernote.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/font/summernote.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/font/summernote.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ar-AR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ar-AR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ar-AR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-az-AZ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-az-AZ.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-az-AZ.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-bg-BG.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-bg-BG.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-bg-BG.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ca-ES.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ca-ES.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ca-ES.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-cs-CZ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-cs-CZ.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-cs-CZ.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-da-DK.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-da-DK.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-da-DK.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-de-DE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-de-DE.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-de-DE.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-el-GR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-el-GR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-el-GR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-es-ES.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-es-ES.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-es-ES.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-es-EU.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-es-EU.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-es-EU.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fa-IR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fa-IR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fa-IR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fi-FI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fi-FI.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fi-FI.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fr-FR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fr-FR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-fr-FR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-gl-ES.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-gl-ES.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-gl-ES.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-he-IL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-he-IL.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-he-IL.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-hr-HR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-hr-HR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-hr-HR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-hu-HU.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-hu-HU.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-hu-HU.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-id-ID.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-id-ID.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-id-ID.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-it-IT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-it-IT.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-it-IT.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ja-JP.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ja-JP.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ja-JP.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ko-KR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ko-KR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ko-KR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-lt-LT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-lt-LT.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-lt-LT.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-lt-LV.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-lt-LV.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-lt-LV.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-mn-MN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-mn-MN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-mn-MN.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-nb-NO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-nb-NO.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-nb-NO.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-nl-NL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-nl-NL.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-nl-NL.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pl-PL.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pl-PL.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pl-PL.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pt-BR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pt-BR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pt-BR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pt-PT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pt-PT.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-pt-PT.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ro-RO.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ro-RO.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ro-RO.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ru-RU.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ru-RU.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ru-RU.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sk-SK.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sk-SK.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sk-SK.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sl-SI.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sl-SI.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sl-SI.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sr-RS-Latin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sr-RS-Latin.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sr-RS-Latin.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sr-RS.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sr-RS.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sr-RS.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sv-SE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sv-SE.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-sv-SE.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ta-IN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ta-IN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-ta-IN.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-th-TH.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-th-TH.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-th-TH.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-tr-TR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-tr-TR.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-tr-TR.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-uk-UA.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-uk-UA.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-uk-UA.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-uz-UZ.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-uz-UZ.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-uz-UZ.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-vi-VN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-vi-VN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-vi-VN.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-zh-CN.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-zh-CN.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-zh-CN.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-zh-TW.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-zh-TW.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/lang/summernote-zh-TW.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/plugin/databasic/summernote-ext-databasic.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/plugin/databasic/summernote-ext-databasic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/plugin/hello/summernote-ext-hello.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/plugin/specialchars/summernote-ext-specialchars.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-bs4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-bs4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-bs4.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-bs4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-bs4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-bs4.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-bs4.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-lite.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-lite.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-lite.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-lite.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-lite.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-lite.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote-lite.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote.min.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TEMPS/summernote.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/product_add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/product_edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/category_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,7 +377,8 @@
       <workItem from="1609591493292" duration="59536000" />
       <workItem from="1609755913195" duration="80000" />
       <workItem from="1609756000860" duration="4907000" />
-      <workItem from="1609799951751" duration="8204000" />
+      <workItem from="1609799951751" duration="8326000" />
+      <workItem from="1609857573272" duration="16966000" />
     </task>
     <task id="LOCAL-00001" summary="template added">
       <created>1608588525500</created>
@@ -276,7 +436,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609718733260</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="reservation ekleniyor işlem 3">
+      <created>1609809329082</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1609809329082</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +470,18 @@
     <MESSAGE value="login and log out for admin added" />
     <MESSAGE value="admin category add" />
     <MESSAGE value="admin category update" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin category update" />
+    <MESSAGE value="reservation ekleniyor işlem 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="reservation ekleniyor işlem 3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php</url>
+          <line>104</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

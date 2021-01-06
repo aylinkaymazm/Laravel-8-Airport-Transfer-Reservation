@@ -148,5 +148,14 @@
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('assets') }}/admin/build/js/custom.min.js"></script>
 
+<script>
+    $('#datatable-fixed-header').dataTable( {
+        paging: false
+    });
 
+
+    $('#datatable-fixed-header').dataTable( {
+        searching: false
+    });
+</script>
 @endsection
