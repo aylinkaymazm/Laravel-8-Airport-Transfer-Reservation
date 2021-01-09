@@ -25,6 +25,8 @@
     <link href="{{ asset('assets') }}/admin/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="{{ asset('assets') }}/admin/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!summernote-->
+    <link href="{{asset('assets')}}/admin/vendors/summernote/css/summernote-bs4.css">
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('assets') }}/admin/build/css/custom.min.css" rel="stylesheet">

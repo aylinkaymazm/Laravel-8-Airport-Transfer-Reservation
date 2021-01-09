@@ -123,8 +123,11 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Product $product,$id)
-    {
-        DB::table('products')->where('id','=',$id)->delete();
+    {/*
+        DB::table('products')->where('id','=',$id)->delete();*/
+        $data = Product::find($id);
+        $data->delete();
+
         return redirect()->route('admin_products');
     }
 }

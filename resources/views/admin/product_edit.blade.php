@@ -2,11 +2,15 @@
 
 @section('title', 'Admin Edit Product Page')
 @section('javascript')
-    <!-- include libraries(jQuery, bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- include summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!-- include libraries(jQuery, bootstrap, fontawesome) -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.js"></script>
+
 @endsection
 
 @section('content')
@@ -73,7 +77,7 @@
                                     </div>
                                     <div class="x_content" style="display: block;">
                                         <br>
-                                        <form role="form" action="{{route('admin_product_update',['id'=>$data->id])}}" method="post" class="form-horizontal form-label-left">
+                                        <form role="form" action="{{route('admin_product_update',['id'=>$data->id])}}" enctype="multipart/form-data" method="post" class="form-horizontal form-label-left">
                                             @csrf
                                             <div class="form-group row ">
                                                 <label class="control-label col-md-3 col-sm-3 ">Parent</label>
@@ -156,10 +160,10 @@
                                             <div class="form-group row ">
                                                 <label class="control-label col-md-3 col-sm-3 ">Image</label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <input type="file" class="form-control" name="image">
+                                                    <input type="file" class="form-control" value="{{$data->image}}" name="image">
 
                                                     @if ($data->image)
-                                                        <img src="{{Storage::url($data->image)}}" height="60" alt="">
+                                                        <img src="{{Storage::url($data->image)}}" height="100" alt="">
                                                     @endif
                                                 </div>
                                             </div>

@@ -2,11 +2,16 @@
 
 @section('title', 'Admin Add Product Page')
 @section('javascript')
-    <!-- include libraries(jQuery, bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- include summernote css/js -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <!-- include libraries(jQuery, bootstrap, fontawesome) -->
+
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.js"></script>
+
 @endsection
 
 @section('content')
@@ -50,30 +55,9 @@
                                 </li>
                             </ul>
                             <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-
-                            <div class="col-md-6 ">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                            </li>
-                                            <li class="dropdown">
-                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 30px, 0px);">
-                                                    <a class="dropdown-item" href="#">Settings 1</a>
-                                                    <a class="dropdown-item" href="#">Settings 2</a>
-                                                </div>
-                                            </li>
-                                            <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                            </li>
-                                        </ul>
-                                        <div class="clearfix"></div>
-                                    </div>
                                     <div class="x_content" style="display: block;">
                                         <br>
-                                        <form role="form" action="{{route('admin_product_create')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                                        <form role="form" action="{{route('admin_product_store')}}" method="post" enctype="multipart/form-data" class="form-horizontal form-label-left">
                                             @csrf
                                             <div class="form-group row ">
                                                 <label class="control-label col-md-3 col-sm-3 ">Parent</label>

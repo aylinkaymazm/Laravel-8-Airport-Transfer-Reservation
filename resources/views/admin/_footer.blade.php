@@ -49,3 +49,5 @@
 
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('assets') }}/admin/build/js/custom.min.js"></script>
+</body>
+</html>
