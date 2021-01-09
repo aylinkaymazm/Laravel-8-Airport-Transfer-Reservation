@@ -2,15 +2,9 @@
 
 @section('title', 'Admin Edit Product Page')
 @section('javascript')
-    <!-- include libraries(jQuery, bootstrap, fontawesome) -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
-    <!-- include summernote css/js-->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.7.0/summernote.js"></script>
-
+    <!--Ckeditör-->
+    <script type=”text/javascript” src=”{{asset('assets')}}/admin/ckeditor/ckeditor.js”></script>
 @endsection
 
 @section('content')
@@ -141,12 +135,7 @@
                                             <div class="form-group row ">
                                                 <label class="control-label col-md-3 col-sm-3 ">Detail</label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <textarea id="detail" name="detail">"{{$data->detail}}"</textarea>
-                                                    <script>
-                                                        $(document).ready(function() {
-                                                            $('#detail').summernote();
-                                                        });
-                                                    </script>
+                                                    <textarea id="detail" class="ckeditor" name="detail">"{{$data->detail}}"</textarea>
                                                 </div>
                                             </div>
 

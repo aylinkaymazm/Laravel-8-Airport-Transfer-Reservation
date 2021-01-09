@@ -102,8 +102,9 @@
 
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('assets') }}/admin/build/js/custom.min.js"></script>
-    <!summernote-->
-    <link href="{{asset('assets')}}/admin/vendors/summernote/css/summernote-bs4.css">
+
+    <!--Ckeditör-->
+    <script type=”text/javascript” src=”{{asset('assets')}}/admin/ckeditor/ckeditor.js”></script>
 
     <script>
         $('#datatable-fixed-header').dataTable( {

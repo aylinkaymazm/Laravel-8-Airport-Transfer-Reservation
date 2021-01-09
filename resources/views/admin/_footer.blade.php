@@ -49,5 +49,10 @@
 
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('assets') }}/admin/build/js/custom.min.js"></script>
+
+
+<!--Ckeditör-->
+<script type=”text/javascript” src=”{{asset('assets')}}/admin/ckeditor/ckeditor.js”></script>
+
 </body>
 </html>
