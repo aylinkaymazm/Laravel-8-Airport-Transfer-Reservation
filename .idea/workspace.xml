@@ -1,31 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="image update and create">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ImageController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_08_143059_create_images_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_08_143729_image.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/images/delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/images/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/images/gallery.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/css/font/summernote.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/css/font/summernote.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/css/font/summernote.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/css/font/summernote.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/css/summernote-bs4.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/js/summernote-bs4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/image_add.blade.php" afterDir="false" />
+    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="product image gallery added">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_09_001728_create_settings_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_09_003151_setting.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/setting_edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/laravellp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravellp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/_footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/js/summernote-bs4.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/admin/vendors/summernote/js/summernote-bs4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/app/public/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,9 +154,6 @@
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
     </include_path>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="1lqLWvsMcP7Lf5dmDlORcNo2IE3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -236,7 +220,7 @@
       <workItem from="1609930496873" duration="9725000" />
       <workItem from="1609958963551" duration="580000" />
       <workItem from="1609970658061" duration="2151000" />
-      <workItem from="1610101475451" duration="19109000" />
+      <workItem from="1610101475451" duration="27683000" />
     </task>
     <task id="LOCAL-00001" summary="template added">
       <created>1608588525500</created>
@@ -308,7 +292,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609893636182</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="product image gallery added">
+      <created>1610150794433</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610150794433</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,6 +328,18 @@
     <MESSAGE value="admin category update" />
     <MESSAGE value="reservation ekleniyor işlem 3" />
     <MESSAGE value="image update and create" />
-    <option name="LAST_COMMIT_MESSAGE" value="image update and create" />
+    <MESSAGE value="product image gallery added" />
+    <option name="LAST_COMMIT_MESSAGE" value="product image gallery added" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php</url>
+          <line>110</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

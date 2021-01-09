@@ -108,10 +108,7 @@ class ProductController extends Controller
         $data ->minquantity = $request->input('minquantity');
         $data ->tax = (int)$request->input('tax');
         $data ->detail= $request->input('detail');
-
-        if ($request->file('image'!=null)){
-            $data->image = Storage::putFile('images',$request->file('image'));
-        }
+        $data->image = Storage::putFile('images',$request->file('image'));
         $data->save();
         return redirect()->route('admin_products');
     }

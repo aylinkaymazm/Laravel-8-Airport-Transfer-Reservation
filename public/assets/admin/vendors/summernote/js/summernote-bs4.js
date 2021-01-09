@@ -1,14 +1,14 @@
 /*!
- * 
+ *
  * Super simple wysiwyg editor v0.8.12
  * https://summernote.org
- * 
- * 
+ *
+ *
  * Copyright 2013- Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license.
- * 
+ *
  * Date: 2019-07-30T07:32Z
- * 
+ *
  */
 (function webpackUniversalModuleDefinition(root, factory) {
     if(typeof exports === 'object' && typeof module === 'object')
@@ -247,7 +247,6 @@ external_jQuery_default.a.extend(external_jQuery_default.a.summernote.lang, {
       shapeNone: 'Shape: None',
       dragImageHere: 'Drag image or text here',
       dropImage: 'Drop image or Text',
-      selectFromFiles: 'Select from files',
       maximumFileSize: 'Maximum file size',
       maximumFileSizeError: 'Maximum file size exceeded.',
       url: 'Image URL',
