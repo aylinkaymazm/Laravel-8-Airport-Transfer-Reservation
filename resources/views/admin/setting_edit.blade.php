@@ -11,7 +11,7 @@
     <!-- page content -->
     <div class="right_col" role="main">
         <div class="row">
-            <div class="col-md-12  ">
+            <div class="col-md-12">
                 <form role="form" action="{{route('admin_setting_update')}}" enctype="multipart/form-data" method="post" class="form-horizontal form-label-left">
                     @csrf
 
@@ -177,10 +177,9 @@
                             <button type="submit" class="btn btn-success">Upload Settings</button>
                         </div>
                     </div>
+                </form>
             </div>
-            </form>
         </div>
-    </div>
     </div>
     <!-- /page content over -->
 @endsection

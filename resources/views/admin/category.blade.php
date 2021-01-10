@@ -20,20 +20,6 @@
                                 <div id="datatable-fixed-header_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <div class="dataTables_length" id="datatable-fixed-header_length">
-                                                <label>
-                                                    Show
-                                                    <select name="datatable-fixed-header_length" aria-controls="datatable-fixed-header" class="form-control input-sm">
-                                                        <option value="10">10</option>
-                                                        <option value="25">25</option>
-                                                        <option value="50">50</option>
-                                                        <option value="100">100</option>
-                                                    </select>
-                                                    entries
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
                                             <div id="datatable-fixed-header_filter" class="dataTables_filter">
                                                 <label>
                                                     Search:
@@ -58,8 +44,10 @@
                                                 <tbody>
                                                 @foreach($datalist as $rs)
                                                     <tr role="row" class="odd">
-                                                        <td > {{ $rs->id}}</td>
-                                                        <td>{{ $rs->parent_id}}</td>
+                                                        <td>{{ $rs->id}}</td>
+                                                        <td>
+                                                            {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}
+                                                        </td>
                                                         <td>{{ $rs->title}}</td>
                                                         <td>{{ $rs->status}}</td>
                                                         <td><a href="{{route('admin_category_edit',['id' => $rs->id])}}" >Edit</a> </td>
@@ -117,24 +105,7 @@
 @endsection
 
 @section('footer')
-    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <script src="{{ asset('assets') }}/admin/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Datatables -->
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/jszip/dist/jszip.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
 
     <!-- Bootstrap -->
     <script src="{{ asset('assets') }}/admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -148,14 +119,5 @@
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('assets') }}/admin/build/js/custom.min.js"></script>
 
-<script>
-    $('#datatable-fixed-header').dataTable( {
-        paging: false
-    });
-
-
-    $('#datatable-fixed-header').dataTable( {
-        searching: false
-    });
-</script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
 @endsection

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use League\CommonMark\Inline\Element\Strong;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $datalist = Category::all();
+        $datalist = Category::with('children')->get();
         return view('admin.product_add', ['datalist' =>$datalist]);
     }
 
@@ -81,8 +82,7 @@ class ProductController extends Controller
     public function edit(Product $product,$id)
     {
         $data = Product::find($id);
-        $datalist = Category::all();
-
+        $datalist = Category::with('children')->get();
         return view('admin.product_edit',['data' => $data,'datalist' => $datalist]);
     }
 
@@ -108,7 +108,10 @@ class ProductController extends Controller
         $data ->minquantity = $request->input('minquantity');
         $data ->tax = (int)$request->input('tax');
         $data ->detail= $request->input('detail');
-        $data->image = Storage::putFile('images',$request->file('image'));
+        if ($request->file('image')!=null)
+        {
+            $data->image = Storage::putFile('images',$request->file('image')); //file upload image
+        }
         $data->save();
         return redirect()->route('admin_products');
     }

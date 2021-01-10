@@ -39,13 +39,15 @@
                                                 @foreach($datalist as $rs)
                                                     <tr role="row" class="odd">
                                                         <td > {{ $rs->id}}</td>
-                                                        <td>{{ $rs->category_id}}</td>
+                                                        <td>
+                                                            {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title)}}
+                                                        </td>
                                                         <td>{{ $rs->title}}</td>
                                                         <td>{{ $rs->quantity}}</td>
                                                         <td>{{ $rs->price}}</td>
                                                         <td>
                                                             @if ($rs->image)
-                                                                <img src="{{ Storage::url($rs->image)}}" height="30" alt="">
+                                                                <img src="{{ Storage::url($rs->image)}}" height="38" alt="">
                                                             @endif
                                                         </td>
                                                         <td><a href="{{route('admin_image_add',['product_id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=110,height=700')" >
@@ -72,25 +74,8 @@
 @endsection
 
 @section('footer')
-    <link href="cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <script src="{{ asset('assets') }}/admin/vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Datatables -->
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/jszip/dist/jszip.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/pdfmake/build/pdfmake.min.js"></script>
-    <script src="{{ asset('assets') }}/admin/vendors/pdfmake/build/vfs_fonts.js"></script>
 
+    <script src="{{ asset('assets') }}/admin/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
     <script src="{{ asset('assets') }}/admin/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- FastClick -->
@@ -106,14 +91,5 @@
     <!--Ckeditör-->
     <script type=”text/javascript” src=”{{asset('assets')}}/admin/ckeditor/ckeditor.js”></script>
 
-    <script>
-        $('#datatable-fixed-header').dataTable( {
-            paging: false
-        });
 
-
-        $('#datatable-fixed-header').dataTable( {
-            searching: false
-        });
-    </script>
 @endsection
