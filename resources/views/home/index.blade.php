@@ -1,11 +1,7 @@
 @extends('layouts.home')
-
-@section('title', 'laravel e-commerce')
-@section('description')
-    en güvenilir e-transport
-@endsection
-@section('keywords','car','minivan','bus')
-
+@section('title', $setting->title)
+@section('description', $setting->description)
+@section('keywords', $setting->keywords)
 
 @section('content')
 
@@ -323,3 +319,53 @@
     </section>
     <!-- End latest-blog Area -->
 @endsection
+
+{{--slider ile bağlayıp ana dosyadan Cekilecek
+
+{% block javascripts %}
+{{ parent() }}
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $('.ceren-slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+</script>
+{% en--}}

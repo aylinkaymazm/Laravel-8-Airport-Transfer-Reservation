@@ -1,10 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', 'Admin Edit Setting Page')
+@section('title', 'Settings')
 @section('javascript')
 
     <!--Ckeditör-->
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 @endsection
 
 @section('content')
@@ -15,7 +18,7 @@
                 <form role="form" action="{{route('admin_setting_update')}}" enctype="multipart/form-data" method="post" class="form-horizontal form-label-left">
                     @csrf
 
-                    <input type="hidden" id="id" value="{{$data->id}}" class="form-control" name="id">
+                    <input type="hidden" id="id" value="{{$setting->id}}" class="form-control" name="id">
                     <br>
                     <div class="form-group row ">
 
@@ -50,48 +53,48 @@
 
                                 <label class="control-label col-md-3 col-sm-3 ">Title</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text" id="title" value="{{$data->title}}" class="form-control" name="title">
+                                    <input type="text" id="title" value="{{$setting->title}}" class="form-control" name="title">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">Keywords</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text" value="{{$data->keywords}}" class="form-control" name="keywords">
+                                    <input type="text" value="{{$setting->keywords}}" class="form-control" name="keywords">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">Description</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text" value="{{$data->description}}" class="form-control" name="description">
+                                    <input type="text" value="{{$setting->description}}" class="form-control" name="description">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">company</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text" value="{{$data->company}}" class="form-control" name="company">
+                                    <input type="text" value="{{$setting->company}}" class="form-control" name="company">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">address</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text" value="{{$data->address}}" class="form-control" name="address">
+                                    <input type="text" value="{{$setting->address}}" class="form-control" name="address">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">phone</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="number" value="{{$data->phone}}" class="form-control" name="phone">
+                                    <input type="number" value="{{$setting->phone}}" class="form-control" name="phone">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">Fax</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->fax}}" class="form-control" name="fax">
+                                    <input type="text"  value="{{$setting->fax}}" class="form-control" name="fax">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">email</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->email}}" class="form-control" name="email">
+                                    <input type="text"  value="{{$setting->email}}" class="form-control" name="email">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">Status</label>
                                 <div class="col-md-9 col-sm-9 ">
                                     <select class="form-control" name="status">
-                                        <option selected="selected">{{$data->status}}</option>
+                                        <option selected="selected">{{$setting->status}}</option>
                                         <option>True</option>
                                         <option>False</option>
                                     </select>
@@ -103,22 +106,22 @@
                             <div class="tab-pane fade" id="smtp" role="tabpanel" aria-labelledby="smtp-tab">
                                 <label class="control-label col-md-3 col-sm-3 ">smtpserver</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->smtpserver}}" class="form-control" name="smtpserver">
+                                    <input type="text"  value="{{$setting->smtpserver}}" class="form-control" name="smtpserver">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">smtpemail</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->smtpemail}}" class="form-control" name="smtpemail">
+                                    <input type="text"  value="{{$setting->smtpemail}}" class="form-control" name="smtpemail">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">smtppassword</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="password"  value="{{$data->smtppassword}}" class="form-control" name="smtppassword">
+                                    <input type="password"  value="{{$setting->smtppassword}}" class="form-control" name="smtppassword">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">smtpport</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="number"  value="{{$data->smtpport}}" class="form-control" name="smtpport">
+                                    <input type="number"  value="{{$setting->smtpport}}" class="form-control" name="smtpport">
                                 </div>
                             </div>
 
@@ -127,22 +130,22 @@
                             <div class="tab-pane fade" id="social" role="tabpanel" aria-labelledby="social-tab">
                                 <label class="control-label col-md-3 col-sm-3 ">Facebook</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->facebook}}" class="form-control" name="facebook">
+                                    <input type="text"  value="{{$setting->facebook}}" class="form-control" name="facebook">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">Instagram</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->instagram}}" class="form-control" name="instagram">
+                                    <input type="text"  value="{{$setting->instagram}}" class="form-control" name="instagram">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">Twitter</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->twitter}}" class="form-control" name="twitter">
+                                    <input type="text"  value="{{$setting->twitter}}" class="form-control" name="twitter">
                                 </div>
 
                                 <label class="control-label col-md-3 col-sm-3 ">Youtube</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input type="text"  value="{{$data->youtube}}" class="form-control" name="youtube">
+                                    <input type="text"  value="{{$setting->youtube}}" class="form-control" name="youtube">
                                 </div>
                             </div>
 
@@ -150,7 +153,7 @@
                             <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
                                 <label class="control-label col-md-3 col-sm-3 ">About Us</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input id="aboutus" value="{{$data->aboutus}}" class="form-control" name="aboutus">
+                                    <input id="aboutus" value="{{$setting->aboutus}}" class="form-control" name="aboutus">
                                 </div>
                             </div>
                             {{--contact us se
@@ -158,7 +161,7 @@
                             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                                 <label class="control-label col-md-3 col-sm-3 ">Contact</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <input id="contact" value="{{$data->contact}}" class="form-control" name="contact">
+                                    <input id="contact" value="{{$setting->contact}}" class="form-control" name="contact">
                                 </div>
                             </div>
 
@@ -166,7 +169,7 @@
                             <div class="tab-pane fade" id="references" role="tabpanel" aria-labelledby="references-tab">
                                 <label class="control-label col-md-3 col-sm-3 ">References</label>
                                 <div class="col-md-9 col-sm-9 ">
-                                    <textarea id="references" class="ckeditor" name="detail">"{{$data->references}}"</textarea>
+                                    <textarea id="references" class="ckeditor" name="detail">"{{$setting->references}}"</textarea>
                                 </div>
                             </div>
                         </div>
@@ -177,6 +180,7 @@
                             <button type="submit" class="btn btn-success">Upload Settings</button>
                         </div>
                     </div>
+
                 </form>
             </div>
         </div>

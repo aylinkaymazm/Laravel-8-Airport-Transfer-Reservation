@@ -18,12 +18,17 @@ Route::get('/home2', function () {
 });
 Route::redirect('/anasayfa','/home')->name('anasayfa');
 
-Route::get('/',function () {
+Route::get('', function(){
     return view('home.index');
 });
 
-Route::get('/home',[HomeController::class,'index'])->name('home');
+//20de ekledim deneme
+Route::get('/',[HomeController::class,'index'])->name('home');
+
+Route::get('/home',[HomeController::class,'index'])->name('homepage');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
+Route::get('/aboutus',[HomeController::class,'aboutus'])->name('references');
+Route::get('/aboutus',[HomeController::class,'aboutus'])->name('contact');
 
 
 //Route::get('/test/{id}/{name}',[HomeController::class,'test'])->where(['id'=>'[0-9])+','name'=>'[A-Za-z]+']);
@@ -53,7 +58,7 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('admin_product_delete');
         Route::get('show', [\App\Http\Controllers\Admin\ProductController::class, 'show'])->name('admin_product_show');
     });
-    //Product Image Gallery image
+    //Product Image Gallery
     Route::prefix('image')->group(function () {
         Route::get('create/{product_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
         Route::post('store/{product_id}', [\App\Http\Controllers\Admin\ImageController::class, 'store'])->name('admin_image_store');
@@ -69,7 +74,7 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout',[HomeController::class,'logout'])->name('admin_logout');
+Route::get('/logout',[HomeController::class,'logout'])->name('logout');
 
 
 

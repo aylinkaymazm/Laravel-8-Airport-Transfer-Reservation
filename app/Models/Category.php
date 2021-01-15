@@ -12,11 +12,6 @@ class Category extends Model
     protected $appends =[
         'parent',
     ];
-
-    public static function find($parent_id)
-    {
-    }
-
     public function products()
     {
         return $this->hasMany(Product::class);

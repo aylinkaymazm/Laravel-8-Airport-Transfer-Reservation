@@ -1,3 +1,7 @@
+@php
+    $setting=\App\Http\Controllers\HomeController::getSetting()
+@endphp
+
 <!-- start footer Area -->
 <footer class="footer-area section-gap">
     <div class="container">
@@ -6,10 +10,10 @@
                 <div class="single-footer-widget">
                     <h6>Quick links</h6>
                     <ul>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Brand Assets</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                        <li>{{$setting->company}}</li>
+                        <li>{{$setting->address}}</li>
+                        <li><strong>Phone:</strong>{{$setting->phone}}</li>
+                        <li><strong>Email:</strong>{{$setting->email}}</li>
                     </ul>
                 </div>
             </div>
@@ -40,10 +44,10 @@
                     <h6>Follow Us</h6>
                     <p>Let us be social</p>
                     <div class="footer-social d-flex align-items-center">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
+                        @if ($setting->facebook != null) <a href="{{$setting->facebook}}" target="_blank" ><i class="fa fa-facebook"></i></a>@endif
+                        @if ($setting->twitter != null) <a href="{{$setting->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>@endif
+                            @if ($setting->instagram != null) <a href="{{$setting->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>@endif
+                            @if ($setting->youtube != null) <a href="{{$setting->youtube}}" target="_blank"><i class="fa fa-youtube"></i></a>@endif
                     </div>
                 </div>
             </div>
@@ -66,7 +70,7 @@
             </div>
             <p class="mt-80 mx-auto footer-text col-lg-12">
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | {{$setting->company}}
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
         </div>
@@ -90,3 +94,4 @@
 <script src="{{ asset('assets') }}/js/jquery.nice-select.min.js"></script>
 <script src="{{ asset('assets') }}/js/mail-script.js"></script>
 <script src="{{ asset('assets') }}/js/main.js"></script>
+
