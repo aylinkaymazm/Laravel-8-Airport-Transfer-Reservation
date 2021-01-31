@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title','About Us - ' . $setting->title)
+@section('title','References - ' . $setting->title)
 @section('description'){{ $setting->description }}@endsection
 @section('keywords',$setting->keywords)
 
@@ -15,10 +15,10 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="about-content col-lg-12">
                     <h1 class="text-white">
-                        About Us
+                        References
                     </h1>
                     <p class="text-white link-nav"><a href="{{route('home')}}">Home </a>
-                        <span class="lnr lnr-arrow-right"></span>  <a href="{{route('aboutus')}}"> About US</a>
+                        <span class="lnr lnr-arrow-right"></span>  <a href="{{route('references')}}"> References</a>
                     </p>
                 </div>
             </div>
@@ -29,9 +29,9 @@
     <section class="home-about-area section-gap">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-12">
+                <div class="col-middle">
 
-                    {!!  $setting->aboutus !!}
+                    {!!  $setting->references !!}
 
                 </div>
             </div>

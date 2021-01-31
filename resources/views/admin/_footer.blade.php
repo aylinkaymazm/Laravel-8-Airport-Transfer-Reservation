@@ -52,7 +52,7 @@
 
 
 <!--Ckeditör-->
-<script type=”text/javascript” src=”{{asset('assets')}}/admin/ckeditor/ckeditor.js”></script>
+<script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
 </body>
 </html>

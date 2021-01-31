@@ -28,8 +28,8 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('/home',[HomeController::class,'index'])->name('homepage');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
-Route::get('/aboutus',[HomeController::class,'aboutus'])->name('references');
-Route::get('/aboutus',[HomeController::class,'aboutus'])->name('contact');
+Route::get('/references',[HomeController::class,'references'])->name('references');
+Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 
 
 //Route::get('/test/{id}/{name}',[HomeController::class,'test'])->where(['id'=>'[0-9])+','name'=>'[A-Za-z]+']);
@@ -78,12 +78,12 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
 });
 
-
+//profile
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
 });
 
-
+//Admin login control
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');
