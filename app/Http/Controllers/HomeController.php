@@ -23,7 +23,7 @@ class HomeController extends Controller
     public function index()
     {
         $setting = Setting::first();
-        return view('home.index',['setting'=>$setting]);
+        return view('home.index',['setting'=>$setting,'page'=>'home']);
     }
     public function aboutus()
     {

@@ -17,6 +17,8 @@
     <link href="{{asset('assets')}}/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
     <link href="{{asset('assets')}}/admin/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <!-- ckeditr -->
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 
     <!-- Custom Theme Style -->
     <link href="{{asset('assets')}}/admin/build/css/custom.min.css" rel="stylesheet">

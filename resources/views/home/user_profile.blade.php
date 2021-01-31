@@ -14,19 +14,21 @@
                     <h1 class="text-white">
                         Blank Page
                     </h1>
-                    <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> Elements</a></p>
+                    <p class="text-white link-nav"><a href="{{route('home')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>
+                        <a href="elements.html"> Elements</a>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
     <!-- End banner Area -->
 
-    <div class="button-group-area mt-40">
-        <a href="#" class="genric-btn default circle arrow">Default<span class="lnr lnr-arrow-right"></span></a>
-        <a href="#" class="genric-btn primary circle arrow">Primary<span class="lnr lnr-arrow-right"></span></a>
-        <a href="#" class="genric-btn success circle arrow">Success<span class="lnr lnr-arrow-right"></span></a>
-        <a href="#" class="genric-btn info circle arrow">Info<span class="lnr lnr-arrow-right"></span></a>
-        <a href="#" class="genric-btn warning circle arrow">Warning<span class="lnr lnr-arrow-right"></span></a>
-        <a href="#" class="genric-btn danger circle arrow">Danger<span class="lnr lnr-arrow-right"></span></a>
+    <div class="col-lg-2">
+        @include('home.usermenu')
     </div>
+    <div class="col-md-10">
+        @include('profile.show')
+    </div>
+
+
 @endsection

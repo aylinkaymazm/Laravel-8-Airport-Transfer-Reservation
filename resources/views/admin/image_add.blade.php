@@ -60,7 +60,8 @@
                     @endif
                 </td>
                 <td><a href="{{route('admin_image_delete',['id' => $rs->id,'product_id' =>$data->id])}}" onclick="return confirm('Record will be Delete!! are u sure?')" >
-                        <img src="{{asset('assets/admin/images')}}/delete.png" height="35"></a></td>
+                        <img src="{{asset('assets/admin/images')}}/delete.png" height="35"></a>
+                </td>
             </tr>
         @endforeach
         </tbody>

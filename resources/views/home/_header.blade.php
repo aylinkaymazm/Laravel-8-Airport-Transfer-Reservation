@@ -14,28 +14,24 @@
                         <li class="menu-active"><a href="{{route('home')}}">About</a></li>
                         <li class="menu-active"><a href="{{route('home')}}">References</a></li>
                         <li class="menu-active"><a href="{{route('home')}}">Contact</a></li>
-                        <li class="menu-active"><a href="{{route('home')}}">Profile</a>
+                        <li class="menu-has-children" ><a href="{{route('home')}}">Profile</a>
                             <img src="{{asset('assets')}}/img/elements/user2.png" width="30"></li>
                         @auth
-                            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-                                <strong class="text-uppercase">{{Auth::user()->name}}</strong>
-                            </div>
+                            <p align="right"><strong class="text-uppercase">{{Auth::user()->name}}</strong></p>
                         @endauth
                         @guest
-                            <a href="/login">Login</a>/<a href="/register">Join</a>
+                            <li class="menu-has-children"><a href="/login" class="sf-with-ul">Login</a>/<a href="/register" class="sf-with-ul">Join</a>
+                                <ul style="display: none;">
+                                    <li><a href="{{route('myprofile')}}">My Account</a></li>
+                                    <li><a href="#">my whishlist</a></li>
+                                    <li><a href="#">compare</a></li>
+                                    <li><a href="#">checkout</a></li>
+                                    <li><a href="{{route('logout')}}">Logout</a></li>
+                                </ul>
+                            </li>
                         @endguest
-
-                        <ul class="custom-menu">
-                            <li><a href="#"><i class="fa fa-user"></i>My Account</a></li>
-                            <li><a href="#">my whishlist</a></li>
-                            <li><a href="#">compare</a></li>
-                            <li><a href="#">checkout</a></li>
-                            <li><a href="#">login</a></li>
-                            <li><a href="{{route('logout')}}"><i class="fa fa-user-plus"></i> </a>Logout </li>
-                        </ul>
                     </ul>
                 </nav><!-- #nav-menu-container -->
             </div>
         </div>
-    </div>
 </header>

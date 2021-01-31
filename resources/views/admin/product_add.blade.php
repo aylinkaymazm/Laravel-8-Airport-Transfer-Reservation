@@ -4,7 +4,7 @@
 @section('javascript')
 
     <!--Ckeditör-->
-
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 @endsection
 
 @section('content')
@@ -97,7 +97,7 @@
                                             <div class="form-group row ">
                                                 <label class="control-label col-md-3 col-sm-3 ">Detail</label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <textarea id="ckeditor" name="detail"></textarea>
+                                                    <textarea id="ckeditor1" class="ckeditor" name="detail"></textarea>
                                                     <script>
                                                         ClassicEditor
                                                             .create( document.querySelector( '#Detail' ) )

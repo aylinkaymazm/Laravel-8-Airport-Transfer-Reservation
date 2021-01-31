@@ -50,7 +50,7 @@
                                                                 <img src="{{ Storage::url($rs->image)}}" height="38" alt="">
                                                             @endif
                                                         </td>
-                                                        <td><a href="{{route('admin_image_add',['product_id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=110,height=700')" >
+                                                        <td><a href="{{route('admin_image_add',['product_id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')" >
                                                                 <img src="{{asset('assets/admin/images')}}/gallery.png" height="35"></a>
                                                         </td>
                                                         <td>{{ $rs->status}}</td>

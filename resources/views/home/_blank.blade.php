@@ -17,7 +17,9 @@
                     <h1 class="text-white">
                         Blank Page
                     </h1>
-                    <p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> Elements</a></p>
+                    <p class="text-white link-nav"><a href="{{route('home')}}">Home </a>
+                        <span class="lnr lnr-arrow-right"></span>  <a href="elements.html"> Elements</a>
+                    </p>
                 </div>
             </div>
         </div>

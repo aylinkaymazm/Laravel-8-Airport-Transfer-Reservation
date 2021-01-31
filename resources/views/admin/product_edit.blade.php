@@ -4,7 +4,7 @@
 @section('javascript')
 
     <!--Ckeditör-->
-    <script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 @endsection
 
 @section('content')
