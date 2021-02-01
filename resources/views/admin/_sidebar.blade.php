@@ -7,6 +7,7 @@
             <li><a href="{{route('admin_home')}}"><i class="fa fa-home"></i> Home </a></li>
             <li><a href="{{route('admin_category')}}" class="nav-link"><i class="fa fa-edit"></i> Category </a></li>
             <li><a href="{{route('admin_products')}}" class="nav-link"><i class="fa fa-edit"></i> Product </a></li>
+            <li><a href="{{route('admin_messages')}}" class="nav-link"><i class="fa fa-edit"></i> Contact Messages </a></li>
 
             <li><a><i class="fa fa-table"></i> Reservation <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
