@@ -1,6 +1,3 @@
-{{--
-
---}}
 {{--header da da menu var hangisi calısyor test1--}}{{--
 
 <div class="container main-menu">

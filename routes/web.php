@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TransferController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,8 +32,8 @@ Route::get('/home',[HomeController::class,'index'])->name('homepage');
 Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
 Route::get('/references',[HomeController::class,'references'])->name('references');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
-
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
 
 
 //Route::get('/test/{id}/{name}',[HomeController::class,'test'])->where(['id'=>'[0-9])+','name'=>'[A-Za-z]+']);
@@ -79,6 +80,12 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
     });
 
+
+
+
+
+
+
     #setting
     Route::get('setting',[\App\Http\Controllers\Admin\SettingController::class,'index'])->name('admin_setting');
     Route::post('setting/update',[\App\Http\Controllers\Admin\SettingController::class,'update'])->name('admin_setting_update');
@@ -88,11 +95,27 @@ Route::middleware('auth')->prefix('admin')->group(function(){
 //User
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
+
 });
 
 //profile
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
+
+
+#transfer
+    Route::prefix('transfer')->group(function (){
+        Route::get('/', [TransferController::class, 'index'])->name('user_transfers');
+        Route::get('create', [TransferController::class, 'create'])->name('user_transfer_create');
+        Route::post('store', [TransferController::class, 'store'])->name('user_transfer_store');
+        Route::get('edit/{id}', [TransferController::class, 'edit'])->name('user_transfer_edit');
+        Route::post('update/{id}', [TransferController::class, 'update'])->name('user_transfer_update');
+        Route::get('delete/{id}', [TransferController::class, 'delete'])->name('user_transfer_delete');
+        Route::get('show', [TransferController::class, 'show'])->name('user_transfer_show');
+    });
+
+
+
 });
 
 //Admin login control

@@ -1,8 +1,25 @@
-
-<a href="#" class="genric-btn success circle arrow">MY PROFILE<span class="lnr lnr-arrow-right"></span></a>
-<a href="#" class="genric-btn primary circle arrow">MY ORDERS<span class="lnr lnr-arrow-right"></span></a>
-<a href="#" class="genric-btn success circle arrow">MY REVIEWS<span class="lnr lnr-arrow-right"></span></a>
-<a href="#" class="genric-btn info circle arrow">MY SHOPCART<span class="lnr lnr-arrow-right"></span></a>
-<a href="#" class="genric-btn warning circle arrow">MY MESSAGES<span class="lnr lnr-arrow-right"></span></a>
-<a href="{{route('logout')}}" class="genric-btn danger circle arrow">LOGOUT<span class="lnr lnr-arrow-right"></span></a>
-
+<div class="col-lg-4 sidebar-widgets">
+    <div class="widget-wrap">
+        <div class="single-sidebar-widget post-category-widget">
+            <h4 class="category-title">USER MENU</h4>
+            <ul class="cat-list">
+                <li>
+                    <a href="#" class="d-flex justify-content-between">MY Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex justify-content-between">MY Transfer
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex justify-content-between">MY Message
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('logout')}}"class="d-flex justify-content-between">LOGOUT
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

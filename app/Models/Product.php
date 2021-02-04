@@ -14,4 +14,8 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function transferitem(){
+        return $this->hasMany(Transferitem::class);
+    }
 }

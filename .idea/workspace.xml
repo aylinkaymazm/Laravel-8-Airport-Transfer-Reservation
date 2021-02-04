@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="Contact Form edit and deleted for admin side" />
+    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="Contact Form edit and deleted for admin side">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Transfer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Transferitem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_03_232728_create_transfers_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_03_234707_create_transferitems_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_002913_transfer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_002945_transferitem.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/aaaaaaaa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/g1a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/g2a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/g3a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/g4a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/g5a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/g6a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/havaalani-transfer-banner.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/img/sas.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/select_car.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/home/user_transfer_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/about-img.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/about-img.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/g1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/g1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/g2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/g2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/g3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/g3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/g4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/g4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/g5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/g5.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/g6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/g6.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/img/header-bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/img/header-bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_menu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_slider.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_slider.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -157,15 +197,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/home" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\php\laravellp\resources\views\admin" />
       <recent name="C:\php\laravellp\resources\views\home" />
+      <recent name="C:\php\laravellp\resources\views\admin" />
       <recent name="C:\php\laravellp\resources\views\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -218,7 +258,10 @@
       <workItem from="1610716329749" duration="12493000" />
       <workItem from="1611426732569" duration="126000" />
       <workItem from="1611931881167" duration="183000" />
-      <workItem from="1611940965653" duration="57837000" />
+      <workItem from="1611940965653" duration="75667000" />
+      <workItem from="1612347616564" duration="694000" />
+      <workItem from="1612348471066" duration="25267000" />
+      <workItem from="1612430687988" duration="17793000" />
     </task>
     <task id="LOCAL-00001" summary="template added">
       <created>1608588525500</created>
@@ -346,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612179039017</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Contact Form edit and deleted for admin side">
+      <created>1612180141530</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1612180141530</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,11 +452,6 @@
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php</url>
           <line>21</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/admin/setting_edit.blade.php</url>
-          <line>17</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -5,25 +5,30 @@
 
 @section('content')
 
+
     @include('home._slider')
     <!-- start banner Area -->
-    <section class="banner-area relative" id="home">
-        <div class="overlay overlay-bg"></div>
+    <section id="home">
+        <div class="overlay overlay-bg"><video playsinline autoplay muted loop poster="placeholder.jpg" id="bgvideo" width="x" height="y">
+                <source src="{{ asset('assets') }}/img//havaalani-transfer-banner.mp4" type="video/mp4"></video></div>
         <div class="container">
             <div class="row fullscreen d-flex align-items-center justify-content-between">
                 <div class="banner-content col-lg-6 col-md-6 ">
-                    <h6 class="text-white ">Need a ride? just call</h6>
+                    <h6 class="text-white ">Need a ride? Just rezervasion or call</h6>
                     <h1 class="text-uppercase">
-                        911 999 911
+                        551 222 22 22
                     </h1>
                     <p class="pt-10 pb-10 text-white">
-                        Whether you enjoy city breaks or extended holidays in the sun, you can always improve your travel experiences by staying in a small.
+                        Enjoy a long holiday in the sun in the Bahamas or go hiking in the Alps. Do you want to go to the airport, let us pick you up wherever you are.
                     </p>
-                    <a href="#" class="primary-btn text-uppercase">Call for taxi</a>
+                    <a href="#" class="primary-btn text-uppercase">Call for transfer</a>
                 </div>
+
+{{--                AREA OF TRANSFER INFORMATŞON----}}
                 <div class="col-lg-4  col-md-6 header-right">
-                    <h4 class="pb-30">Book Your Texi Online!</h4>
-                    <form class="form">
+                    <h4 class="pb-30">Book Your Transfer Online!</h4>
+                    <form action="{{ route('user_transfer_create') }}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="from-group">
                             <input class="form-control txt-field" type="text" name="name" placeholder="Your name"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name'">
                             <input class="form-control txt-field" type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'">
@@ -51,16 +56,27 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group dates-wrap">
-                                <input id="datepicker2" class="dates form-control"  placeholder="Date & time" type="text">
+                                <input id="date" class="dates form-control"  placeholder="Date" type="text">
                                 <div class="input-group-prepend">
                                     <span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group">
+                            <div class="input-group dates-wrap">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-user"></i></div>
+                                    </div>
+                                    <input name="ctl00$cntCenter$txtPass" value="1" id="ctl00_cntCenter_txtPass" class="form-control" type="number" min="1" max="46">
+                            </div>
+                        </div>
 
-                            <button class="btn btn-default btn-lg btn-block text-center text-uppercase">Make reservation</button>
 
+
+
+                        <div class="form-group">
+                            <button id="add-button" type="submit"class="btn btn-default btn-lg btn-block text-center text-uppercase">Make reservation</button>
                         </div>
                     </form>
                 </div>
@@ -319,53 +335,3 @@
     </section>
     <!-- End latest-blog Area -->
 @endsection
-
-{{--slider ile bağlayıp ana dosyadan Cekilecek
-
-{% block javascripts %}
-{{ parent() }}
-<script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script>
-    $('.ceren-slider').slick({
-        dots: true,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        arrows: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-        ]
-    });
-</script>
-{% en--}}
