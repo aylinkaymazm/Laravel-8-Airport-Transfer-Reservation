@@ -8,17 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Transferitem extends Model
 {
     use HasFactory;
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function transfer(){
+    public function transfer()
+    {
         return $this->belongsTo(Transfer::class);
     }
-
-
 }

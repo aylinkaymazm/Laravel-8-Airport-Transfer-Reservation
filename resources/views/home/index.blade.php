@@ -24,33 +24,41 @@
                     <a href="#" class="primary-btn text-uppercase">Call for transfer</a>
                 </div>
 
-{{--                AREA OF TRANSFER INFORMATŞON----}}
+                {{--                AREA OF TRANSFER INFORMATiON----}}
                 <div class="col-lg-4  col-md-6 header-right">
                     <h4 class="pb-30">Book Your Transfer Online!</h4>
                     <form action="{{ route('user_transfer_create') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="from-group">
-                            <input class="form-control txt-field" type="text" name="name" placeholder="Your name"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Your name'">
-                            <input class="form-control txt-field" type="email" name="email" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'">
-                            <input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone number'">
+                            <input class="form-control txt-field" type="text" name="name" value="{{Auth::user()->name}}" placeholder="name">
+                            <input class="form-control txt-field" type="email" name="email" value="{{Auth::user()->email}}"  placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'">
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select">
                                 <select>
-                                    <option value="" disabled selected hidden>From Destination</option>
-                                    <option value="1">Destination One</option>
-                                    <option value="2">Destination Two</option>
-                                    <option value="3">Destination Three</option>
+                                    <option value="" disabled selected hidden>From Location</option>
+                                    <option value="1">Sabiha Gökçen Airport</option>
+                                    <option value="1">Atatürk Airport</option>
+                                    <option value="1">D100 Bakırköy Marina Girişi</option>
+                                    <option value="1">Ortaköy ,Yıldız Parkı </option>
+                                    <option value="1">Koşuyolu Acıbadem </option>
+                                    <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                    <option value="1">Beyoğlu Taksim Gezi Parkı Çıkışı </option>
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select2">
                                 <select>
-                                    <option value="" disabled selected hidden>To Destination</option>
-                                    <option value="1">Destination One</option>
-                                    <option value="2">Destination Two</option>
-                                    <option value="3">Destination Three</option>
+                                    <option value="" disabled selected hidden>To Location</option>
+                                    <option value="1">Sabiha Gökçen Airport</option>
+                                    <option value="1">Atatürk Airport</option>
+                                    <option value="1">D100 Bakırköy Marina Girişi</option>
+                                    <option value="1">Ortaköy ,Yıldız Parkı </option>
+                                    <option value="1">Koşuyolu Acıbadem</option>
+                                    <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                    <option value="1">Beyoğlu Taksim Parkı Çıkışı </option>
+
                                 </select>
                             </div>
                         </div>
@@ -65,16 +73,12 @@
 
                         <div class="form-group">
                             <div class="input-group dates-wrap">
-                                    <div class="input-group-prepend">
-                                        <div class="input-group-text"><i class="fa fa-user"></i></div>
-                                    </div>
-                                    <input name="ctl00$cntCenter$txtPass" value="1" id="ctl00_cntCenter_txtPass" class="form-control" type="number" min="1" max="46">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fa fa-user"></i></div>
+                                </div>
+                                <input name="ctl00$cntCenter$txtPass" value="1" id="ctl00_cntCenter_txtPass" class="form-control" type="number" min="1" max="46">
                             </div>
                         </div>
-
-
-
-
                         <div class="form-group">
                             <button id="add-button" type="submit"class="btn btn-default btn-lg btn-block text-center text-uppercase">Make reservation</button>
                         </div>
@@ -84,26 +88,6 @@
         </div>
     </section>
     <!-- End banner Area -->
-
-    <!-- Start home-about Area -->
-    <section class="home-about-area section-gap">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 about-left">
-                    <img class="img-fluid" src="{{ asset('assets') }}/img/about-img.jpg" alt="">
-                </div>
-                <div class="col-lg-6 about-right">
-                    <h1>Globally Connected
-                        by Large Network</h1>
-                    <h4>We are here to listen from you deliver exellence</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
-                    </p>
-                    <a class="text-uppercase primary-btn" href="#">Get Details</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End home-about Area -->
 
     <!-- Start services Area -->
     <section class="services-area pb-120">
@@ -115,21 +99,21 @@
             <div class="row">
                 <div class="col-lg-4 single-service">
                     <span class="lnr lnr-car"></span>
-                    <a href="#"><h4>Taxi Service</h4></a>
+                    <a href="#"><h4>Service</h4></a>
                     <p>
                         Usage of the Internet is becoming more common due to rapid advancement of technology and power.
                     </p>
                 </div>
                 <div class="col-lg-4 single-service">
                     <span class="lnr lnr-briefcase"></span>
-                    <a href="#"><h4>Office Pick-ups</h4></a>
+                    <a href="#"><h4>Pick-ups</h4></a>
                     <p>
                         Usage of the Internet is becoming more common due to rapid advancement of technology and power.
                     </p>
                 </div>
                 <div class="col-lg-4 single-service">
                     <span class="lnr lnr-bus"></span>
-                    <a href="#"><h4>Event Transportation</h4></a>
+                    <a href="#"><h4>Event And Wedding Transportation</h4></a>
                     <p>
                         Usage of the Internet is becoming more common due to rapid advancement of technology and power.
                     </p>
@@ -143,23 +127,22 @@
     <section class="image-gallery-area section-gap">
         <div class="container">
             <div class="row section-title">
-                <h1>Image Gallery that we like to share</h1>
+                <h1>Car Gallery that we like to share</h1>
                 <p>Who are in extremely love with eco friendly system.</p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 single-gallery">
-                    <a href="img/g1.jpg" class="img-gal"><img class="img-fluid" src="{{ asset('assets') }}/img/g1.jpg" alt=""></a>
-                    <a href="img/g4.jpg" class="img-gal"><img class="img-fluid" src="{{ asset('assets') }}/img/g4.jpg" alt=""></a>
+            @foreach($cars as $rs)
+                <div class="row">
+                    <div class="col-lg-4 single-gallery">
+                        <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
+                    </div>
+                    <div class="col-lg-4 single-gallery">
+                        <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
+                    </div>
+                    <div class="col-lg-4 single-gallery">
+                        <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
+                    </div>
                 </div>
-                <div class="col-lg-4 single-gallery">
-                    <a href="img/g2.jpg" class="img-gal"><img class="img-fluid" src="{{ asset('assets') }}/img/g2.jpg" alt=""></a>
-                    <a href="img/g5.jpg" class="img-gal"><img class="img-fluid" src="{{ asset('assets') }}/img/g5.jpg" alt=""></a>
-                </div>
-                <div class="col-lg-4 single-gallery">
-                    <a href="img/g3.jpg" class="img-gal"><img class="img-fluid" src="{{ asset('assets') }}/img/g3.jpg" alt=""></a>
-                    <a href="img/g6.jpg" class="img-gal"><img class="img-fluid" src="{{ asset('assets') }}/img/g6.jpg" alt=""></a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
     <!-- End image-gallery Area -->
@@ -275,61 +258,16 @@
                 <div class="col-lg-8">
                     <h1>Experience Great Support</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+                        <h3>INSURED TRAVEL</h3>
+                        Turkey Our company, offering transportation planning and buying what you need with ease on the Internet,
+                        offers its guests the privilege to travel insurance.
+                        Reservation and driver information is provided to our customers via SMS.
                     </p>
-                </div>
-                <div class="col-lg-4 btn-left">
-                    <a href="#" class="primary-btn">Reach Our Support Team</a>
                 </div>
             </div>
         </div>
     </section>
     <!-- End home-calltoaction Area -->
-
-    <!-- Start latest-blog Area -->
-    <section class="latest-blog-area section-gap">
-        <div class="container">
-            <div class="row section-title">
-                <h1>Latest News from our Blog</h1>
-                <p>Who are in extremely love with eco friendly system.</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="single-latest-blog">
-                        <div class="thumb">
-                            <img class="img-fluid" src="{{ asset('assets') }}/img/b1.jpg" alt="">
-                        </div>
-                        <ul class="tags">
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Life Style</a></li>
-                        </ul>
-                        <a href="#">
-                            <h4>Portable latest Fashion for young women</h4>
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                        </p>
-                        <p class="date">31st January, 2018</p>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="single-latest-blog">
-                        <div class="thumb">
-                            <img class="img-fluid" src="{{ asset('assets') }}/img/b2.jpg" alt="">
-                        </div>
-                        <ul class="tags">
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Life Style</a></li>
-                        </ul>
-                        <a href="#">
-                            <h4>Portable latest Fashion for young women</h4>
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore.
-                        </p>
-                        <p class="date">31st January, 2018</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

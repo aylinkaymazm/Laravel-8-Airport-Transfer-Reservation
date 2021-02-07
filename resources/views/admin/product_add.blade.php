@@ -74,6 +74,27 @@
                                             </div>
 
                                             <div class="form-group row ">
+                                                <label class="control-label col-md-3 col-sm-3 ">Capacity</label>
+                                                <div class="col-md-9 col-sm-9 ">
+                                                    <input type="number" value="0" class="form-control" name="capacity">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row ">
+                                                <label class="control-label col-md-3 col-sm-3 ">Base Price</label>
+                                                <div class="col-md-9 col-sm-9 ">
+                                                    <input type="number" value="0" class="form-control" name="baseprice">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row ">
+                                                <label class="control-label col-md-3 col-sm-3 ">KM Price</label>
+                                                <div class="col-md-9 col-sm-9 ">
+                                                    <input type="number" value="0" class="form-control" name="kmprice">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row ">
                                                 <label class="control-label col-md-3 col-sm-3 ">Quantity</label>
                                                 <div class="col-md-9 col-sm-9 ">
                                                     <input type="number" value="1" class="form-control" name="quantity">
@@ -81,9 +102,9 @@
                                             </div>
 
                                             <div class="form-group row ">
-                                                <label class="control-label col-md-3 col-sm-3 ">Minquantity</label>
+                                                <label class="control-label col-md-3 col-sm-3 ">Car Selection</label>
                                                 <div class="col-md-9 col-sm-9 ">
-                                                    <input type="number" value="5" class="form-control" name="minquantity">
+                                                    <input type="number" value="5" class="form-control" name="car_selection">
                                                 </div>
                                             </div>
 

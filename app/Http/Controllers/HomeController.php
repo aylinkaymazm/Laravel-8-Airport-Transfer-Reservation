@@ -28,19 +28,29 @@ class HomeController extends Controller
 
         $setting = Setting::first();
         $slider = Product::select('id','title','image','slug')->limit(3)->get();
+        $cars = Product::select('id','title','image','price')->limit(6)->orderByDesc('id')->get();
 
         $data = [
             'setting'=>$setting,
             'slider'=>$slider,
+            'cars'=>$cars,
             'page'=>'home'
         ];
         return view('home.index', $data);
 
     }
 
-    public function product($id,$slug)
+    public function product($id)
     {
-        $data = Product::find($id,$slug);
+        $data = Product::find($id);
+        $datalist =Product::where('product_id',$id)->get();
+        return view('home.user_transfer', ['data'=>$data,'datalist'=>$datalist]);
+    }
+
+    public function addtotransfer($id)
+    {
+        echo "Add to Transfer";
+        $data = Product::find($id);
         print_r($data);
         exit();
     }

@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Transfer extends Model
 {
     use HasFactory;
-    public function user(){
+
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
-    public function transferitem(){
+    public function transferitem()
+    {
         return $this->hasMany(Transferitem::class);
     }
 }

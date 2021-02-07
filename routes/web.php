@@ -33,7 +33,8 @@ Route::get('/aboutus',[HomeController::class,'aboutus'])->name('aboutus');
 Route::get('/references',[HomeController::class,'references'])->name('references');
 Route::get('/contact',[HomeController::class,'contact'])->name('contact');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
-Route::get('/product/{id}/{slug}', [HomeController::class, 'product'])->name('product');
+Route::get('/product/{id}', [HomeController::class, 'product'])->name('product');
+Route::get('/addtotransfer/{id}', [HomeController::class, 'addtotransfer'])->name('addtotransfer');
 
 
 //Route::get('/test/{id}/{name}',[HomeController::class,'test'])->where(['id'=>'[0-9])+','name'=>'[A-Za-z]+']);
@@ -106,16 +107,13 @@ Route::middleware('auth')->prefix('user')->namespace('user')->group(function () 
 #transfer
     Route::prefix('transfer')->group(function (){
         Route::get('/', [TransferController::class, 'index'])->name('user_transfers');
-        Route::get('create', [TransferController::class, 'create'])->name('user_transfer_create');
+        Route::post('create', [TransferController::class, 'create'])->name('user_transfer_create');
         Route::post('store', [TransferController::class, 'store'])->name('user_transfer_store');
         Route::get('edit/{id}', [TransferController::class, 'edit'])->name('user_transfer_edit');
         Route::post('update/{id}', [TransferController::class, 'update'])->name('user_transfer_update');
         Route::get('delete/{id}', [TransferController::class, 'delete'])->name('user_transfer_delete');
-        Route::get('show', [TransferController::class, 'show'])->name('user_transfer_show');
+        Route::get('show/{id}', [TransferController::class, 'show'])->name('user_transfer_show');
     });
-
-
-
 });
 
 //Admin login control

@@ -1,14 +1,14 @@
-<div class="col-lg-4 sidebar-widgets">
-    <div class="widget-wrap">
+<div class="widget-wrap">
+    <div class="col-lg-3 sidebar-widgets">
         <div class="single-sidebar-widget post-category-widget">
             <h4 class="category-title">USER MENU</h4>
             <ul class="cat-list">
                 <li>
-                    <a href="#" class="d-flex justify-content-between">MY Profile
+                    <a href="{{route('myprofile')}}" class="d-flex justify-content-between">MY Profile
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="d-flex justify-content-between">MY Transfer
+                    <a href="{{route('user_transfers')}}" class="d-flex justify-content-between">MY Transfer
                     </a>
                 </li>
                 <li>

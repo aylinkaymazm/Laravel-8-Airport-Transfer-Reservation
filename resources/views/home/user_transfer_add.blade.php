@@ -25,171 +25,88 @@
     <!-- End banner Area -->
     <div class="home-about-area section-gap">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 sidebar-widgets">
-                    <div class="card-body">
-                        @include('home.usermenu')
+            <div class="col-lg-3 sidebar-widgets">
+                @include('home.usermenu')
+            </div>
+            <!-- Start home-about Area -->
+            <div class="col-lg-9">
+                <h3 class="mb-30">Transfer Billing</h3>
+                <form action="{{ route('user_transfer_add')}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="md-9">
+                        <input type="text" placeholder="Name" value="{{Auth::user()->name}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required="" class="single-input">
                     </div>
-                </div>
-                <!-- Start home-about Area -->
-                <div class="col-lg-6 col-md-6">
-                    <h3 class="mb-30">Transfer Billing</h3>
-                    <form action="{{ route('user_transfer_create') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="md-7">
-                            <input type="text" name="" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required="" class="single-input">
-                        </div>
 
-                        <div class="input-group-icon mt-6">
-                            <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-                            <div class="form-select" id="default-select">
-                                <select style="display: none;">
-                                    <option value="1">To Destination</option>
-                                    <option value="1">Dhaka</option>
-                                    <option value="1">Dilli</option>
-                                    <option value="1">Newyork</option>
-                                    <option value="1">Islamabad</option>
-                                </select><div class="nice-select" tabindex="0"><span class="current">City</span><ul class="list"><li data-value="1" class="option selected">From Destination</li><li data-value="1" class="option">Dhaka</li><li data-value="1" class="option">Dilli</li><li data-value="1" class="option">Newyork</li><li data-value="1" class="option">Islamabad</li></ul></div>
-                            </div>
-                        </div>
-                        <div class="input-group-icon mt-7">
-                            <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
-                            <div class="form-select" id="default-select">
-                                <select style="display: none;">
-                                    <option value="1">From Destination</option>
-                                    <option value="1">Dhaka</option>
-                                    <option value="1">Dilli</option>
-                                    <option value="1">Newyork</option>
-                                    <option value="1">Islamabad</option>
-                                </select><div class="nice-select" tabindex="0"><span class="current">City</span><ul class="list"><li data-value="1" class="option selected">To Destination</li><li data-value="1" class="option">Dhaka</li><li data-value="1" class="option">Dilli</li><li data-value="1" class="option">Newyork</li><li data-value="1" class="option">Islamabad</li></ul></div>
-                            </div>
-                        </div>
-                        <div class="input-group-icon mt-7">
-                            <div class="form-group">
-                                <div class="input-group dates-wrap">
-                                    <input id="datepicker2" class="dates form-control hasDatepicker" placeholder="Date &amp; time" type="text">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="md-9">
+                        <input type="text" placeholder="Email" value="{{Auth::user()->email}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required="" class="single-input">
+                    </div>
+                    <div class="md-9">
+                        <input type="text" placeholder="Phone" value="{{Auth::user()->phone}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'phone'" required="" class="single-input">
+                    </div>
 
-                        <div class="mt-7">
-                            <textarea class="single-textarea" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" required=""></textarea>
-                        </div>
-                        <div class="mt-7">
-                            <input type="text" name="first_name" placeholder="Primary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Primary color'" required="" class="single-input-primary">
-                        </div>
-                        <div class="mt-7">
-                            <input type="text" name="first_name" placeholder="Accent color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Accent color'" required="" class="single-input-accent">
-                        </div>
-                        <div class="mt-7">
-                            <input type="text" name="first_name" placeholder="Secondary color" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Secondary color'" required="" class="single-input-secondary">
-                        </div>
-                    </form>
-                </div>
+                    <div class="mt-9">
+                        <select style="display: none;" id="product_id" name="product_id" class="form-control">
+                            @foreach($datalist as $rs)
+                            <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                <div class="section-top-border">
-                    <h3 class="mb-80">Transfer</h3>
-                    <div class="progress-table-wrap">
-                        <div class="progress-table">
-                            <div class="table-head">
-                                <div class="visit">Transfer</div>
-                                <div class="visit">Price</div>
-                                <div class="visit">To Destination</div>
-                                <div class="visit">From Destination</div>
-                                <div class="visit">Date</div>
-                                <div class="visit">Time</div>
-                                <div class="visit">Person Number</div>
-                                <div class="visit">Note</div>
-                                <div class="visit">Status</div>
-                            </div>
-                            <div class="table-row">
-                                <div class="visit">Transfer</div>
-                                <div class="visit">{{$total}}</div>
-                                <div class="visit">ToDestination</div>
-                                <div class="visit">FromDestination</div>
-                                <div class="visit">Date</div>
-                                <div class="visit">Time</div>
-                                <div class="visit">Person Number</div>
-                                <div class="visit">Note</div>
-                                <div class="visit">Status</div>
-
-                            </div>
+                    <div class="input-group-icon mt-6">
+                        <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                        <div class="form-select">
+                            <select style="display: none;" id="from_destination" name="from_destination" class="form-control">
+                                <option value="1">From Destination</option>
+                                <option value="1">Sabiha Gökçen Airport</option>
+                                <option value="1">Atatürk Airport</option>
+                                <option value="1">D100 Bakırköy Marina Girişi</option>
+                                <option value="1">Ortaköy ,Yıldız Parkı Çıkışı </option>
+                                <option value="1">Koşuyolu Acıbadem</option>
+                                <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                <option value="1">Beyoğlu Taksim Parkı Çıkışı </option>
+                            </select>
                         </div>
                     </div>
-                </div>
+                    <div class="input-group-icon mt-6">
+                        <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                        <div class="form-select" >
+                            <select style="display: none;" id="to_destination" name="to_destination" class="form-control">
+                                <option value="1">To Destination</option>
+                                <option value="1">Sabiha Gökçen Airport</option>
+                                <option value="1">Atatürk Airport</option>
+                                <option value="1">D100 Bakırköy Marina Girişi</option>
+                                <option value="1">Ortaköy ,Yıldız Parkı Çıkışı </option>
+                                <option value="1">Koşuyolu Acıbadem</option>
+                                <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                <option value="1">Beyoğlu Taksim Parkı Çıkışı </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="mt-9">
+                        <input type="text" name="airline" placeholder="Airline" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Airline'" required="" class="single-input-primary">
+                    </div>
+                    <div class="mt-9">
+                        <input type="number" name="flight_number" placeholder="Flight Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Flight Number'" required="" class="single-input-accent">
+                    </div>
+                    <div class="mt-9">
+                        <input type="text" name="flight_arrived_date" placeholder="Flight Arrived Date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Flight Arrived Date'" required="" class="single-input-secondary">
+                    </div>
+                    <div class="mt-9">
+                        <input type="text" name="flight_arrived_time" placeholder="Flight Arrived Time" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Flight Arrived Time'" required="" class="single-input-secondary">
+                    </div>
+                    <div class="mt-9">
+                        <input type="text" name="pick_up_time" placeholder="Pick Up Time" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pick Up Time'" required="" class="single-input-secondary">
+                    </div>
+
+                    <div class="form-group">
+                        <button id="add-button" type="submit"class="btn btn-default btn-lg btn-block text-center text-uppercase">SAVE</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     </section>
-    <!-- End home-about Area -->
-
-    <!-- full Title -->
-
-
-    <div class="blog-main">
-        <div class="container">
-            <div class="row">
-                <!-- Post Content Column -->
-                <div class="col-lg-8">
-                    <form action="{{ route('user_transfer_create') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label class="control-label mb-1">Title</label>
-                            <input name="title" type="text" class="form-control" value="" data-val="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label mb-1">Type</label>
-                            <select name="type" id="select" class="form-control">
-                                <option value="Menu">Menu</option>
-                                <option value="Announcement">Announcement</option>
-                                <option value="News">News</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label mb-1">Keywords</label>
-                            <input name="keywords" type="text" class="form-control" value="" data-val="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label mb-1">Description</label>
-                            <input name="description" type="text" class="form-control" value="" data-val="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label mb-1">Detail</label>
-                            <textarea name="detail" id="detail"></textarea>
-                            <script>
-                                CKEDITOR.replace( 'detail' );
-                            </script>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label mb-1">Image</label>
-                            <input name="image" type="file" class="form-control" value="" data-val="true">
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label mb-1">Slug</label>
-                            <input name="slug" type="text" class="form-control" value="" data-val="true">
-                        </div>
-                        <div>
-                            <button id="add-button" type="submit" class="btn btn-primary">
-                                <i class="fa fa-plus-square"></i>&nbsp;
-                                <span>Add a new Content</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <!-- Sidebar Widgets Column -->
-                <!-- Side Widget -->
-
-
-            </div>
-        </div>
-    </div>
-    <!-- /.container -->
-    </div>
-
-
-
 
 @endsection

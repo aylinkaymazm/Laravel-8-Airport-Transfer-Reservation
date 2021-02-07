@@ -57,7 +57,6 @@ class CategoryController extends Controller
             'title' =>  $request->input('title'),
             'keywords' =>  $request->input('keywords'),
             'description' =>  $request->input('description'),
-            'slug' => $request->input('slug'),
             'status' =>  $request->input('status'),
         ]);
         return redirect()->route('admin_category');

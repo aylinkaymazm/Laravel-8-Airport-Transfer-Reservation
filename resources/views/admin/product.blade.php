@@ -27,7 +27,10 @@
                                                     <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 337px;">Category</th>
                                                     <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 162px;">Title</th>
                                                     <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">Quantity</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Capacity</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Base Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">KM Price</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Car Selection</th>
                                                     <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Image</th>
                                                     <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Image Gallery</th>
                                                     <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">Status</th>
@@ -44,7 +47,10 @@
                                                         </td>
                                                         <td>{{ $rs->title}}</td>
                                                         <td>{{ $rs->quantity}}</td>
-                                                        <td>{{ $rs->price}}</td>
+                                                        <td>{{ $rs->capacity}}</td>
+                                                        <td>{{ $rs->baseprice}}</td>
+                                                        <td>{{ $rs->kmprice}}</td>
+                                                        <td>{{ $rs->car_selection}}</td>
                                                         <td>
                                                             @if ($rs->image)
                                                                 <img src="{{ Storage::url($rs->image)}}" height="38" alt="">

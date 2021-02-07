@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Transfer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TransferController extends Controller
 {
@@ -14,7 +15,10 @@ class TransferController extends Controller
      */
     public function index()
     {
-        //
+        $datalist = Transfer::where('user_id',Auth::id())->get();
+
+        return view('home.user_transfer',['datalist'=>$datalist]);
+
     }
 
     /**
@@ -36,8 +40,31 @@ class TransferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Transfer();
+        $data->product_id = $request->input('product_id');
+        $data->category_id = $request->input('category_id');
+        $data->user_id = Auth::id();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->date = $request->input('date');
+        $data->time = $request->input('time');
+        $data->phone = $request->input('phone');
+        $data->total = $request->input('total');
+        $data->note = $request->input('note');
+        $data->price = $request->input('price');
+        $data->from_destination = $request->input('from_destination');
+        $data->to_destination = $request->input('to_destination');
+        $data->airline = $request->input('airline');
+        $data->flight_number = $request->input('flight_number');
+        $data->flight_arrived_date = $request->input('flight_arrived_date');
+        $data->flight_arrived_time = $request->input('flight_arrived_time');
+        $data->pick_up_time = $request->input('pick_up_time');
+
+        $data->save();
+
+        return redirect()->route('user_transfers')->with('success','Transfer Order Successfuly');
     }
+
 
     /**
      * Display the specified resource.
@@ -45,9 +72,11 @@ class TransferController extends Controller
      * @param  \App\Models\Transfer  $transfer
      * @return \Illuminate\Http\Response
      */
-    public function show(Transfer $transfer)
+    public function show(Transfer $transfer,$id)
     {
-        //
+        $datalist = Transfer::where('user_id',Auth::id())->where('order_id',$id)->get();
+
+        return view('home.user_transfer_item',['datalist'=>$datalist]);
     }
 
     /**

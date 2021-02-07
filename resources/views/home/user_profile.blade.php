@@ -2,8 +2,8 @@
 
 @section('title', 'User Profile')
 
-
 @section('content')
+
 
     <!-- start banner Area -->
     <section class="banner-area relative about-banner" id="home">
@@ -22,14 +22,12 @@
         </div>
     </section>
     <!-- End banner Area -->
+
     <div class="card-body">
         @include('home.usermenu')
     </div>
-
-
     <div class="col-md-10">
         @include('profile.show')
     </div>
-
 
 @endsection
