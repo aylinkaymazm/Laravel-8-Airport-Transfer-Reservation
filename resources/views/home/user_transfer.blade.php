@@ -36,6 +36,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>Car Selection</th>
                                 <th>From Destination</th>
                                 <th>To Destination</th>
                                 <th>Airline Company</th>

@@ -34,8 +34,6 @@
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
                                 <th>From Destination</th>
                                 <th>To Destination</th>
                                 <th>Airline Company</th>
@@ -52,8 +50,6 @@
                             @foreach ( $datalist as $rs )
                                 <tr>
                                     <td>{{Auth::user()->name}}</td>
-                                    <td>{{Auth::user()->email}}</td>
-                                    <td>{{$rs->phone}}</td>
                                     <td><a style="text-decoration: none;" href="{{ route('product', ['id'=>$rs->id]) }}">{{ $rs->title }}</a></td>
                                     <td>{{ $rs->from_destination }}</td>
                                     <td>{{ $rs->to_destination }}</td>

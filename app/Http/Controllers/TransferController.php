@@ -16,7 +16,6 @@ class TransferController extends Controller
     public function index()
     {
         $datalist = Transfer::where('user_id',Auth::id())->get();
-
         return view('home.user_transfer',['datalist'=>$datalist]);
 
     }
@@ -74,9 +73,9 @@ class TransferController extends Controller
      */
     public function show(Transfer $transfer,$id)
     {
-        $datalist = Transfer::where('user_id',Auth::id())->where('order_id',$id)->get();
+        $datalist = Transfer::where('user_id',Auth::id())->where('transfer_id',$id)->get();
 
-        return view('home.user_transfer_item',['datalist'=>$datalist]);
+        return view('home.user_transfer_items',['datalist'=>$datalist]);
     }
 
     /**

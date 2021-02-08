@@ -8,11 +8,11 @@
             <li><a href="{{route('admin_category')}}" class="nav-link"><i class="fa fa-edit"></i> Category </a></li>
             <li><a href="{{route('admin_products')}}" class="nav-link"><i class="fa fa-edit"></i> Product </a></li>
             <li><a href="{{route('admin_messages')}}" class="nav-link"><i class="fa fa-edit"></i> Contact Messages </a></li>
-
-            <li><a><i class="fa fa-table"></i> Reservation <span class="fa fa-chevron-down"></span></a>
+            <li class="active"><a><i class="fa fa-table"></i>Transfer <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="tables.html">Tables</a></li>
-                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    <li><a href="{{route('admin_transfer_list',['status'=>'new'])}}">New Transfer</a></li>
+                    <li><a href="{{route('admin_transfer_list',['status'=>'accepted'])}}">Accepted Transfer</a></li>
+                    <li><a href="{{route('admin_transfer_list',['status'=>'canceled'])}}">Canceled Transfer</a></li>
                 </ul>
             </li>
             <li><a><i class="fa fa-bar-chart-o"></i> Level 1<span class="fa fa-chevron-down"></span></a>

@@ -1,34 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="Transfer added">
-      <change afterPath="$PROJECT_DIR$/app/Models/Location.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_04_234737_add_address_to_products.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_011722_create_locations_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_05_013757_location.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_06_171159_create_transfers_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_07_000434_create_transferitems_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/product_detail.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user_transfer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/home/user_transfer_item.blade.php" afterDir="false" />
+    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="Transfer Rezervasion saved database">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransferController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/transfer.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/transfer_items.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Transfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transfer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Transferitem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transferitem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_03_232728_create_transfers_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_03_234707_create_transferitems_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_04_002913_transfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_06_171525_transfer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_04_002945_transferitem.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_02_07_000800_transferitem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/product_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/product_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/user_profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_transfer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_transfer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/user_transfer_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_transfer_add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_transfer_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_transfer_item.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,9 +155,6 @@
       <path value="$PROJECT_DIR$/vendor/bacon/bacon-qr-code" />
     </include_path>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="1lqLWvsMcP7Lf5dmDlORcNo2IE3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -189,7 +170,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/home" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/admin" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
@@ -197,8 +178,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\php\laravellp\resources\views\home" />
       <recent name="C:\php\laravellp\resources\views\admin" />
+      <recent name="C:\php\laravellp\resources\views\home" />
       <recent name="C:\php\laravellp\resources\views\layouts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -256,7 +237,8 @@
       <workItem from="1612348471066" duration="25267000" />
       <workItem from="1612430687988" duration="31789000" />
       <workItem from="1612518402089" duration="30201000" />
-      <workItem from="1612598117321" duration="35421000" />
+      <workItem from="1612598117321" duration="35545000" />
+      <workItem from="1612688488098" duration="34880000" />
     </task>
     <task id="LOCAL-00001" summary="template added">
       <created>1608588525500</created>
@@ -412,7 +394,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612470265564</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Transfer Rezervasion saved database">
+      <created>1612659375548</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1612659375548</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +439,8 @@
     <MESSAGE value="aboutus ,contact ,references pages all links is active and controlled by admin" />
     <MESSAGE value="Contact Form edit and deleted for admin side" />
     <MESSAGE value="Transfer added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Transfer added" />
+    <MESSAGE value="Transfer Rezervasion saved database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Transfer Rezervasion saved database" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

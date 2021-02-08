@@ -31,7 +31,7 @@
             <!-- Start home-about Area -->
             <div class="col-lg-9">
                 <h3 class="mb-30">Transfer Billing</h3>
-                <form action="{{ route('user_transfer_add')}}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('user_transfer_store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="md-9">
                         <input type="text" placeholder="Name" value="{{Auth::user()->name}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required="" class="single-input">
@@ -44,19 +44,19 @@
                         <input type="text" placeholder="Phone" value="{{Auth::user()->phone}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'phone'" required="" class="single-input">
                     </div>
 
-                    <div class="mt-9">
-                        <select style="display: none;" id="product_id" name="product_id" class="form-control">
-                            @foreach($datalist as $rs)
+                    {{--<div class="md-9">
+                    <select class="form-control" name="category_id">
+                        @foreach ( $datalist as $rs )
                             <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                        @endforeach
+                    </select>
+                    </div>--}}
 
                     <div class="input-group-icon mt-6">
                         <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                         <div class="form-select">
-                            <select style="display: none;" id="from_destination" name="from_destination" class="form-control">
-                                <option value="1">From Destination</option>
+                            <select id="from_destination" name="from_destination" class="form-control">
+                                <option value="1">--From Destination</option>
                                 <option value="1">Sabiha Gökçen Airport</option>
                                 <option value="1">Atatürk Airport</option>
                                 <option value="1">D100 Bakırköy Marina Girişi</option>
@@ -70,8 +70,8 @@
                     <div class="input-group-icon mt-6">
                         <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                         <div class="form-select" >
-                            <select style="display: none;" id="to_destination" name="to_destination" class="form-control">
-                                <option value="1">To Destination</option>
+                            <select id="to_destination" name="to_destination" class="form-control">
+                                <option value="1">--To Destination</option>
                                 <option value="1">Sabiha Gökçen Airport</option>
                                 <option value="1">Atatürk Airport</option>
                                 <option value="1">D100 Bakırköy Marina Girişi</option>

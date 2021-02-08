@@ -47,7 +47,7 @@
                     </li>
 
                     <li class="hidden-sm hidden-xs el-shopping-cart">
-                        <a href="{{ route('user_transfer_store') }}"><i class="fa fa-shopping-cart"><br></i>     Rezervasyon</a>
+                        <a href="{{ route('user_transfers') }}"><i class="fa fa-shopping-cart"><br></i>     Rezervasyon</a>
                     </li>
                 </ul>
             </nav><!-- #nav-menu-container -->

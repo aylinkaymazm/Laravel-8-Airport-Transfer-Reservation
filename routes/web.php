@@ -1,8 +1,10 @@
 <?php
-
 use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\TransferController;
+use App\Http\Controllers\Admin\TransferController as AdminTransferController;
+
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,7 +47,6 @@ Route::get('/test/{id}/{name}',[HomeController::class,'test'])->whereNumber('id'
 Route::middleware('auth')->prefix('admin')->group(function(){
 
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
-
     Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
     Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_category_add');
     Route::post('category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
@@ -73,6 +74,7 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::get('delete/{id}', [MessageController::class, 'destroy'])->name('admin_message_delete');
         Route::get('show', [MessageController::class, 'show'])->name('admin_message_show');
     });
+
     //Product Image Gallery
     Route::prefix('image')->group(function () {
         Route::get('create/{product_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
@@ -81,39 +83,42 @@ Route::middleware('auth')->prefix('admin')->group(function(){
         Route::get('show', [\App\Http\Controllers\Admin\ImageController::class, 'show'])->name('admin_image_show');
     });
 
-
-
-
-
-
-
     #setting
     Route::get('setting',[\App\Http\Controllers\Admin\SettingController::class,'index'])->name('admin_setting');
     Route::post('setting/update',[\App\Http\Controllers\Admin\SettingController::class,'update'])->name('admin_setting_update');
 
+    #Transfer Admin
+    Route::prefix('transfer')->group(function () {
+        Route::get('/', [AdminTransferController::class, 'index'])->name('admin_transfers');
+        Route::get('list/{status}', [AdminTransferController::class, 'list'])->name('admin_transfer_list');
+        Route::post('create', [AdminTransferController::class, 'create'])->name('admin_transfer_add');
+        Route::post('store', [AdminTransferController::class, 'store'])->name('admin_transfer_store');
+        Route::get('edit/{id}', [AdminTransferController::class, 'edit'])->name('admin_transfer_edit');
+        Route::post('update/{id}', [AdminTransferController::class, 'update'])->name('admin_transfer_update');
+        Route::post('itemupdate/{id}', [AdminTransferController::class, 'itemupdate'])->name('user_transfer_item_update');
+        Route::get('delete/{id}', [AdminTransferController::class, 'destroy'])->name('admin_transfer_delete');
+        Route::get('show/{id}', [AdminTransferController::class, 'show'])->name('admin_transfer_show');
+    });
 });
 
 //User
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
-
+#transfer
+    Route::prefix('transfer')->group(function (){
+        Route::get('/', [TransferController::class, 'index'])->name('user_transfers');
+        Route::post('create', [TransferController::class, 'create'])->name('user_transfer_add');
+        Route::post('store', [TransferController::class, 'store'])->name('user_transfer_store');
+        Route::get('edit/{id}', [TransferController::class, 'edit'])->name('user_transfer_edit');
+        Route::post('update/{id}', [TransferController::class, 'update'])->name('user_transfer_update');
+        Route::get('delete/{id}', [TransferController::class, 'destroy'])->name('user_transfer_delete');
+        Route::get('show/{id}', [TransferController::class, 'show'])->name('user_transfer_show');
+    });
 });
 
 //profile
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
-
-
-#transfer
-    Route::prefix('transfer')->group(function (){
-        Route::get('/', [TransferController::class, 'index'])->name('user_transfers');
-        Route::post('create', [TransferController::class, 'create'])->name('user_transfer_create');
-        Route::post('store', [TransferController::class, 'store'])->name('user_transfer_store');
-        Route::get('edit/{id}', [TransferController::class, 'edit'])->name('user_transfer_edit');
-        Route::post('update/{id}', [TransferController::class, 'update'])->name('user_transfer_update');
-        Route::get('delete/{id}', [TransferController::class, 'delete'])->name('user_transfer_delete');
-        Route::get('show/{id}', [TransferController::class, 'show'])->name('user_transfer_show');
-    });
 });
 
 //Admin login control

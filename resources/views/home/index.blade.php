@@ -27,7 +27,7 @@
                 {{--                AREA OF TRANSFER INFORMATiON----}}
                 <div class="col-lg-4  col-md-6 header-right">
                     <h4 class="pb-30">Book Your Transfer Online!</h4>
-                    <form action="{{ route('user_transfer_create') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('user_transfer_add') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="from-group">
                             <input class="form-control txt-field" type="text" name="name" value="{{Auth::user()->name}}" placeholder="name">
