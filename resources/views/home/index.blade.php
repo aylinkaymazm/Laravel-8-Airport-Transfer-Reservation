@@ -30,8 +30,8 @@
                     <form action="{{ route('user_transfer_add') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="from-group">
-                            <input class="form-control txt-field" type="text" name="name" value="{{Auth::user()->name}}" placeholder="name">
-                            <input class="form-control txt-field" type="email" name="email" value="{{Auth::user()->email}}"  placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'">
+                            <input class="form-control txt-field" type="text" name="name" placeholder="name">
+                            <input class="form-control txt-field" type="email" name="email"   placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'">
                         </div>
                         <div class="form-group">
                             <div class="default-select" id="default-select">

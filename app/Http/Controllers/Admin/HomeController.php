@@ -9,8 +9,14 @@ class HomeController extends Controller
 {
 
 
-    public function index()
+    public function __construct()
     {
+        $this->middleware('admin');
+    }
+
+    public function index(){
+
         return view('admin.index');
     }
+
 }

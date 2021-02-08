@@ -57,11 +57,12 @@
         <li class="dropdown"
         @auth
             <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-                <a href="#"><strong class="text-uppercase">{{Auth::user()->name}}</strong></a>
+                <a href="#"><strong class="text-uppercase">{{Auth::user()->name}}
+                    {{Auth::user()->roles->pluck('name')}}</strong></a>
+                <li class="nav-item"><a href="{{route('myprofile')}}" class="nav-link"  title="Login">My Account</a></li>
+                <li class="nav-item"><a href="{{route('logout')}}" class="nav-link"  title="Logout">LogOut</a></li>
+                </li>
             </div>
-            <li class="nav-item"><a href="{{route('myprofile')}}" class="nav-link"  title="Login">My Account</a></li>
-            <li class="nav-item"><a href="{{route('logout')}}" class="nav-link"  title="Logout">LogOut</a></li>
-            </li>
         @endauth
         @guest
             <li class="nav-item"><a href="{{route('login')}}" class="nav-link"  title="Login">LOGİN</a></li>
