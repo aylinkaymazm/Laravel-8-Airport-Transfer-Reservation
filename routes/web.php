@@ -1,11 +1,13 @@
 <?php
 use App\Http\Controllers\Admin\MessageController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\Admin\TransferController as AdminTransferController;
 
-use App\Http\Controllers\UserController;
+
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,6 +51,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::middleware('admin')->group(function () {
 
         Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin_home');
+
         Route::get('category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
         Route::get('category/add',[\App\Http\Controllers\Admin\CategoryController::class,'add'])->name('admin_category_add');
         Route::post('category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
@@ -101,6 +104,21 @@ Route::middleware('auth')->prefix('admin')->group(function () {
             Route::get('delete/{id}', [AdminTransferController::class, 'destroy'])->name('admin_transfer_delete');
             Route::get('show/{id}', [AdminTransferController::class, 'show'])->name('admin_transfer_show');
         });
+
+        #User
+        Route::prefix('user')->group(function () {
+            Route::get('/', [UserController::class, 'index'])->name('admin_users');
+            Route::get('create', [UserController::class, 'create'])->name('admin_user_add');
+            Route::post('store', [UserController::class, 'store'])->name('admin_user_store');
+            Route::get('edit/{id}', [UserController::class, 'edit'])->name('admin_user_edit');
+            Route::post('update/{id}', [UserController::class, 'update'])->name('admin_user_update');
+            Route::get('delete/{id}', [UserController::class, 'delete'])->name('admin_user_delete');
+            Route::get('show/{id}', [UserController::class, 'show'])->name('admin_user_show');
+            Route::get('userrole/{id}', [UserController::class, 'user_roles'])->name('admin_user_roles');
+            Route::post('userrolestore/{id}', [UserController::class, 'user_role_store'])->name('admin_user_role_add');
+            Route::get('userroledelete/{userid}/{roleid}', [UserController::class, 'user_role_delete'])->name('admin_user_role_delete');
+        });
+
     });
 });
 
@@ -121,13 +139,29 @@ Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(fu
 
 //profile
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
-    Route::get('/profile', [UserController::class, 'index'])->name('userprofile');
+    Route::get('/profile', [UserController::class, 'index'])->name('user_profile');
+
+
+
+
+
+
+
+
 });
+
+
+
+
 
 //Admin login control
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');
+
+
+
+
 
 
 

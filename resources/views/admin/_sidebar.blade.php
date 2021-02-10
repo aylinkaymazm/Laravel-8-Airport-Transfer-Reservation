@@ -15,6 +15,7 @@
                     <li><a href="{{route('admin_transfer_list',['status'=>'canceled'])}}">Canceled Transfer</a></li>
                 </ul>
             </li>
+            <li><a href="{{route('admin_users')}}" class="nav-link"><i class="fa fa-user"></i> Users </a></li>
         </ul>
     </div>
     <div class="menu_section">
@@ -56,7 +57,9 @@
                     <li class="nav-item dropdown open" style="padding-left: 15px;">
                         <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
 
-                            <img src="{{ asset('assets')}}/admin/production/images/img.jpg" alt="" class="d-block">{{Auth::user()->name}} </a>
+                            @if (Auth::user()->profile_photo_path)
+                                <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}" height="30" alt="" >
+                            @endif
                         <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
 
                             <a class="dropdown-item"  href="javascript:;"> Profile</a>

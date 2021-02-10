@@ -14,9 +14,7 @@
         <span>Welcome,</span>
         <a href="#" class="d-block">{{Auth::user()->name}}</a>
         @endauth
+        @include('home.message')
     </div>
-
 </div>
 <!-- /menu profile quick info -->
-
-<br />

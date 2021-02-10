@@ -13,7 +13,7 @@
         @include('home.message')
         <div class="page-title">
             <div class="title_left">
-                <h3>Transfer Control list</h3>
+                <h3>Transfers Rezervasion Control list</h3>
             </div>
             <div class="x_content">
                 <div class="row">
@@ -22,12 +22,6 @@
                             <div id="datatable-fixed-header_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="table-data__tool">
-                                            <p class="text-muted font-13 m-b-30">
-                                                <button type="button" class="btn btn-round btn-success"><a href="{{route('admin_transfer_add')}}">Add Transfer</a></button>
-                                            </p>
-                                        </div>
-
                                         <table id="datatable-fixed-header" class="table table-striped table-bordered dataTable no-footer" style="width:100%" role="grid" aria-describedby="datatable-fixed-header_info">
                                             <thead>
                                             <tr role="row">

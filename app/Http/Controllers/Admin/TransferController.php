@@ -18,7 +18,7 @@ class TransferController extends Controller
     public function index()
     {
         $datalist = Transfer::all();
-        return view('admin.transfers',['datalist'=>$datalist]);
+        return view('admin.transfer',['datalist'=>$datalist]);
     }
 
     public function list($status)
@@ -57,7 +57,7 @@ class TransferController extends Controller
     {
         $data = Transfer::find($id);
         $datalist = Transferitem::where('transfer_id',$id)->get();
-        return view('admin.transfer_items',['data'=>$data,'datalist'=>$datalist]);
+        return view('admin.transfer_item',['data'=>$data,'datalist'=>$datalist]);
     }
 
     /**

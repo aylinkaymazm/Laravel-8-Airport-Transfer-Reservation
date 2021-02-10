@@ -61,7 +61,7 @@ class TransferController extends Controller
 
         $data->save();
 
-        return redirect()->route('user_transfers')->with('success','Transfer Order Successfuly');
+        return redirect()->route('user_transfer')->with('success','Transfer Order Successfuly');
     }
 
 
@@ -75,7 +75,7 @@ class TransferController extends Controller
     {
         $datalist = Transfer::where('user_id',Auth::id())->where('transfer_id',$id)->get();
 
-        return view('home.user_transfer_items',['datalist'=>$datalist]);
+        return view('home.user_transfer_item',['datalist'=>$datalist]);
     }
 
     /**

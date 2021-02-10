@@ -24,7 +24,7 @@
                     <a href="#" class="primary-btn text-uppercase">Call for transfer</a>
                 </div>
 
-                {{--                AREA OF TRANSFER INFORMATiON----}}
+                {{--                AREA OF TRANSFER INFORMATION----}}
                 <div class="col-lg-4  col-md-6 header-right">
                     <h4 class="pb-30">Book Your Transfer Online!</h4>
                     <form action="{{ route('user_transfer_add') }}" method="post" enctype="multipart/form-data">

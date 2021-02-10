@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment="Admin transfer panel management">
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdmin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_08_004825_create_roles_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_08_005113_roles.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_08_005335_create_role_user_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_08_005903_role_user.php" afterDir="false" />
+    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment=" User Admin Role Permission">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_roles.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransferController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/usermenu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/transfer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/transfer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +239,12 @@
       <workItem from="1612430687988" duration="31789000" />
       <workItem from="1612518402089" duration="30201000" />
       <workItem from="1612598117321" duration="35545000" />
-      <workItem from="1612688488098" duration="40223000" />
+      <workItem from="1612688488098" duration="40684000" />
+      <workItem from="1612776996035" duration="1795000" />
+      <workItem from="1612789594001" duration="22000" />
+      <workItem from="1612811911466" duration="1572000" />
+      <workItem from="1612948100981" duration="351000" />
+      <workItem from="1612948489423" duration="19269000" />
     </task>
     <task id="LOCAL-00001" summary="template added">
       <created>1608588525500</created>
@@ -410,7 +414,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612744130558</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary=" User Admin Role Permission">
+      <created>1612749727179</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1612749727179</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +461,8 @@
     <MESSAGE value="Transfer added" />
     <MESSAGE value="Transfer Rezervasion saved database" />
     <MESSAGE value="Admin transfer panel management" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin transfer panel management" />
+    <MESSAGE value=" User Admin Role Permission" />
+    <option name="LAST_COMMIT_MESSAGE" value=" User Admin Role Permission" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
