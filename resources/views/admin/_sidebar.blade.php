@@ -6,15 +6,12 @@
         <ul class="nav side-menu">
             <li><a href="{{route('admin_home')}}"><i class="fa fa-home"></i> Home </a></li>
             <li><a href="{{route('admin_category')}}" class="nav-link"><i class="fa fa-edit"></i> Category </a></li>
-            <li><a href="{{route('admin_products')}}" class="nav-link"><i class="fa fa-edit"></i> Product </a></li>
+            <li><a href="{{route('admin_products')}}" class="nav-link"><i class="fa fa-edit"></i> Cars </a></li>
             <li><a href="{{route('admin_messages')}}" class="nav-link"><i class="fa fa-edit"></i> Contact Messages </a></li>
-            <li class="active"><a><i class="fa fa-table"></i>Transfer <span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="{{route('admin_transfer_list',['status'=>'new'])}}">New Transfer</a></li>
-                    <li><a href="{{route('admin_transfer_list',['status'=>'accepted'])}}">Accepted Transfer</a></li>
-                    <li><a href="{{route('admin_transfer_list',['status'=>'canceled'])}}">Canceled Transfer</a></li>
-                </ul>
-            </li>
+            <li><a href="{{route('admin_transfers')}}" class="nav-link"><i class="fa fa-edit"></i>Transfer </a></li>
+
+
+
             <li><a href="{{route('admin_users')}}" class="nav-link"><i class="fa fa-user"></i> Users </a></li>
         </ul>
     </div>
@@ -60,16 +57,16 @@
                             @if (Auth::user()->profile_photo_path)
                                 <img src="{{ Storage::url(Auth::user()->profile_photo_path) }}" height="30" alt="" >
                             @endif
-                        <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
 
-                            <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                            <a class="dropdown-item"  href="javascript:;">
-                                <span class="badge bg-red pull-right">50%</span>
-                                <span>Settings</span>
-                            </a>
-                            <a class="dropdown-item"  href="javascript:;">Help</a>
-                            <a class="dropdown-item"  href="{{route('admin_login')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                        </div>
+                                <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                                <a class="dropdown-item"  href="javascript:;">
+                                    <span class="badge bg-red pull-right">50%</span>
+                                    <span>Settings</span>
+                                </a>
+                                <a class="dropdown-item"  href="javascript:;">Help</a>
+                                <a class="dropdown-item"  href="{{route('admin_login')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                            </div>
                     </li>
 
                     <li role="presentation" class="nav-item dropdown open">

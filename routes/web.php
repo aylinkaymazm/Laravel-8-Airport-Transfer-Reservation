@@ -125,42 +125,30 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 //User
 Route::middleware('auth')->prefix('myaccount')->namespace('myaccount')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('myprofile');
-#transfer
-    Route::prefix('transfer')->group(function (){
-        Route::get('/', [TransferController::class, 'index'])->name('user_transfers');
-        Route::post('create', [TransferController::class, 'create'])->name('user_transfer_add');
-        Route::post('store', [TransferController::class, 'store'])->name('user_transfer_store');
-        Route::get('edit/{id}', [TransferController::class, 'edit'])->name('user_transfer_edit');
-        Route::post('update/{id}', [TransferController::class, 'update'])->name('user_transfer_update');
-        Route::get('delete/{id}', [TransferController::class, 'destroy'])->name('user_transfer_delete');
-        Route::get('show/{id}', [TransferController::class, 'show'])->name('user_transfer_show');
-    });
 });
+
+
 
 //profile
 Route::middleware('auth')->prefix('user')->namespace('user')->group(function () {
     Route::get('/profile', [UserController::class, 'index'])->name('user_profile');
-
-
-
-
-
-
-
+#transfer
+    Route::prefix('transfer')->group(function (){
+        Route::get('/', [TransferController::class, 'index'])->name('user_transfers');
+        Route::post('create', [TransferController::class, 'create'])->name('user_transfer_create');
+        Route::post('store', [TransferController::class, 'store'])->name('user_transfer_store');
+        Route::get('edit/{id}', [TransferController::class, 'edit'])->name('user_transfer_edit');
+        Route::post('update/{id}', [TransferController::class, 'update'])->name('user_transfer_update');
+        Route::get('delete/id}', [TransferController::class, 'destroy'])->name('user_transfer_delete');
+        Route::get('show/{id}', [TransferController::class, 'show'])->name('user_transfer_show');
+    });
 
 });
-
-
-
-
 
 //Admin login control
 Route::get('/admin/login',[HomeController::class,'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class,'logincheck'])->name('admin_logincheck');
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');
-
-
-
 
 
 

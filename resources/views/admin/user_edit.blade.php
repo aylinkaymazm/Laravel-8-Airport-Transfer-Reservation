@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
 @section('title', 'Admin Edit Product Page')
+
 @section('javascript')
 
     <!--Ckeditör-->
     <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
 @endsection
-
 @section('content')
     <!-- page content -->
     <div class="right_col" role="main">
@@ -63,10 +63,6 @@
                         </button>
                     </div>
                 </form>
-
-
-
-
             </div>
         </div>
     </div>

@@ -53,6 +53,45 @@
 
                 </div>
             </div>
+
+            <div id="ctl00_cntCenter_rptSonuc_ctl01_pnlCarList">
+                <div id="search-card">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-5">
+                            <img id="ctl00_cntCenter_rptSonuc_ctl01_imgVc" class="img-fluid" src="/images/3.png">
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-7">
+                            <h4 id="search-card-title">
+                                Minibüs(3-6)</h4>
+                            <p id="search-card-subtitle">
+                                Mercedes Vito Vb.
+                            </p>
+                            <ul id="search-card-specials">
+                                <li><i class="fas fa-user-circle"></i>
+                                    6 Kişi</li>
+                                <li><i class="fas fa-briefcase"></i>
+                                    5 Bagaj</li>
+                                <li style="color: #1275fc"><i class="far fa-check-circle"></i>Ücretsiz Havaalanı Karşılama</li>
+                                <li style="color: #1ca810"><i class="fas fa-check"></i>24 saat öncesine kadar ücretsiz iptal</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <ul>
+                                <li class="search-card-total text-center">
+                                    200,00 <small>TL</small></li>
+                                <li class="search-card-included text-center">
+                                </li>
+                                <li class="search-card-included-desc">
+                                </li>
+                                <li>
+                                    <input type="submit" name="ctl00$cntCenter$rptSonuc$ctl01$btnRez" value="SEÇİN" id="ctl00_cntCenter_rptSonuc_ctl01_btnRez" class="btn btn-primary btn-block">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
     <!-- End banner Area -->

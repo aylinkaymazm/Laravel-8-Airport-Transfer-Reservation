@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Message;
 use App\Models\Product;
 use App\Models\Setting;
+use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -25,8 +26,8 @@ class HomeController extends Controller
 
     public function index()
     {
-
         $setting = Setting::first();
+        $datalist =Category::with('children')->get();
         $slider = Product::select('id','title','image','slug')->limit(3)->get();
         $cars = Product::select('id','title','image','price')->limit(6)->orderByDesc('id')->get();
 
@@ -34,9 +35,9 @@ class HomeController extends Controller
             'setting'=>$setting,
             'slider'=>$slider,
             'cars'=>$cars,
-            'page'=>'home'
+            'page'=>'home',
         ];
-        return view('home.index', $data);
+        return view('home.index', $data,['datalist' => $datalist]);
 
     }
 
@@ -47,14 +48,13 @@ class HomeController extends Controller
         return view('home.user_transfer', ['data'=>$data,'datalist'=>$datalist]);
     }
 
-    public function addtotransfer($id)
+    public function transfer()
     {
-        echo "Add to Transfer";
-        $data = Product::find($id);
-        print_r($data);
-        exit();
-    }
+        #$datalist = Category::with('children')->get();
+        $datalist = Product::all();
+        return view('home.user_transfer', ['datalist' => $datalist]);
 
+    }
 
     public function aboutus()
     {

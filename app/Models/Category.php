@@ -12,9 +12,9 @@ class Category extends Model
     protected $appends =[
         'parent',
     ];
-    public function products()
+    public function transfer()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasMany(Transfer::class);
     }
 #one to many iverse
     public function parent()

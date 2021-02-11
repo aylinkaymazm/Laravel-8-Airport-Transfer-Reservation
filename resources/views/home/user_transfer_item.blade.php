@@ -1,94 +1,127 @@
-@extends('layouts.home')
+<html>
+<head>
+    <title>Image Gallery</title><!-- Bootstrap -->
+    <link href="{{ asset('assets') }}/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ asset('assets') }}/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{ asset('assets') }}/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{{ asset('assets') }}/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
 
-@section('title','Transfer Rezevasion Item')
-
-
-@section('content')
-    <!-- start banner Area -->
-    <section class="banner-area relative about-banner" id="home">
-        <div class="overlay overlay-bg"></div>
-        <div class="container">
-            <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12">
-                    <h1 class="text-white">
-                        Transfer Rezervasion
-                    </h1>
-                    <p class="text-white link-nav"><a href="{{route('home')}}">Home </a>
-                        <span class="lnr lnr-arrow-right"></span>Transfer Rezervasion Item</a>
-                    </p>
-                </div>
+</head>
+<body>
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>Transfer</h3>
+                @include('home.message')
             </div>
-        </div>
-    </section>
-    <!-- End banner Area -->
-    <div class="sidebar-widgets">
-        @include('home.usermenu')
-    </div>
-    <div class="home-about-area section-gap">
-        <div class="container">
-            <div class="row align-items-center">
-                <!-- Start Showing  Area -->
-                <div class="col-lg-12">
-                    <div class="table-responsive table-responsive-data2">
-                        <table class="table table-data2">
-                            <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>From Destination</th>
-                                <th>To Destination</th>
-                                <th>Airline Company</th>
-                                <th>Flight Number</th>
-                                <th>Flight Arrived Date</th>
-                                <th>Flight Arrived Time</th>
-                                <th>Pick Up Time</th>
-                                <th>Status</th>
-                                <th>Note</th>
-                                <th style="width: 5px" colspan="2">Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ( $datalist as $rs )
-                                <tr>
-                                    <td>{{Auth::user()->name}}</td>
-                                    <td><a style="text-decoration: none;" href="{{ route('product', ['id'=>$rs->id]) }}">{{ $rs->title }}</a></td>
-                                    <td>{{ $rs->from_destination }}</td>
-                                    <td>{{ $rs->to_destination }}</td>
-                                    <td>{{ $rs->airline }}</td>
-                                    <td>{{ $rs->flight_number }}</td>
-                                    <td>{{ $rs->flight_arrived_date }}</td>
-                                    <td>{{ $rs->flight_arrived_time }}</td>
-                                    <td>{{ $rs->pick_up_time }}</td>
-                                    <td>{{ $rs->status }}</td>
-                                    <td>
-                                        <div class="table-data-feature">
-                                            <a href="{{ route('user_transfer_add', ['product_id'=>$rs->id]) }}">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
+            <div class="x_content">
+                <div class="row">
+                    <div id="datatable-fixed-header_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap no-footer">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <form class="form-horizontal form-label-left" action="{{route('user_transfer_update', ['id'=> $data -> id ])}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">Category</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <select class="form-control" name="category_id">
+                                                @foreach($datalist as $rs)
+                                                    <option value="{{$rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif > {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div class="table-data-feature">
-                                            <a href="{{ route('user_transfer_edit', ['id'=>$rs->id]) }}">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
+                                    </div>
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">Title</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <input type="text" name="from_destination" class="form-control" placeholder="Default Input" value="{{$data->from_destination}}">
                                         </div>
-                                    </td>
-                                    <td>
-                                        <div class="table-data-feature">
-                                            <a href="{{ route('user_transfer_delete', ['id'=>$rs->id]) }}">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
+                                    </div>
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">to_destination</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <textarea name="to_destination" id="ckeditor1" class="ckeditor">{{$data->to_destination}}</textarea>
                                         </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
+                                    </div>
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">note</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <textarea name="note" id="note" class="ckeditor">{{$data->note}}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">airline</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <textarea name="airline" id="airline" class="ckeditor">{{$data->airline}}</textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">pick_up_time</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <input type="text" name="pick_up_time" class="form-control" value="{{$data->pick_up_time}}" placeholder="Default Input" value="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">flight_number</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <input type="text" name="flight_number" class="form-control" value="{{$data->flight_number}}" placeholder="Default Input" value="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">flight_arrived_date</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <input type="text" name="flight_arrived_date" class="form-control" value="{{$data->flight_arrived_date}}" placeholder="Default Input" value="0">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">flight_arrived_time</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <input type="text" name="flight_arrived_time" class="form-control" value="{{$data->flight_arrived_time}}" placeholder="Default Input" value="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row ">
+                                        <label class="control-label col-md-1 col-sm-1 ">created_at</label>
+                                        <div class="col-md-11 col-sm-11 ">
+                                            <input type="text" name="created_at" class="form-control" value="{{$data->created_at}}" placeholder="Default Input" value="0">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-11 col-sm-11 ">
+                                        <select class="form-control" name="status">
+                                            <option selected="selected">True</option>
+                                            <option>True</option>
+                                            <option>False</option>
+                                        </select>
+                                    </div>
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 col-sm-12">
+                                            <button type="submit" class="btn btn-success">Update Transfer</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </section>
-
-@endsection
+</div>
+<!-- /page content -->
+</body>
+</html>

@@ -18,4 +18,9 @@ class Transfer extends Model
     {
         return $this->hasMany(Transferitem::class);
     }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -26,7 +26,6 @@
                                             <thead>
                                             <tr role="row">
                                                 <th class="sorting_asc" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 210px;">Id</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 337px;">Name</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Car Selection</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 84px;">Note</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">From Destination</th>
@@ -37,16 +36,16 @@
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">Flight Arrived Time</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">Pick Up Time</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">Created At</th>
-                                                <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">Status</th>
                                                 <th class="sorting" tabindex="0" aria-controls="datatable-fixed-header" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 153px;">Edit</th>
                                             </tr>
                                             </thead>
                                             <tbody>
                                             @foreach($datalist as $rs)
                                                 <tr role="row" class="odd">
-                                                    <td > {{ $rs->id}}</td>
-                                                    <td>{{$rs->user->name}}</td>
-                                                    <td><a style="text-decoration: none;" href="{{ route('product', ['id'=>$rs->id]) }}">{{ $rs->title }}</a></td>
+                                                    <td>{{$rs -> id}}</td>
+                                                    <td>
+                                                        {{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category, $rs->category->title) }}
+                                                    </td>
                                                     <td>{{ $rs->note}}</td>
                                                     <td>{{ $rs->from_destination }}</td>
                                                     <td>{{ $rs->to_destination }}</td>
@@ -56,8 +55,7 @@
                                                     <td>{{ $rs->flight_arrived_time }}</td>
                                                     <td>{{ $rs->pick_up_time }}</td>
                                                     <td>{{ $rs->created_at }}</td>
-                                                    <td>{{ $rs->status }}</td>
-                                                    <td><a href="{{route('user_transfer_show',['id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=600')" >
+                                                    <td><a href="{{route('admin_transfer_edit',['id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=600')" >
                                                             <img src="{{asset('assets/admin/images')}}/edit.png" height="35"></a>
                                                 </tr>
                                             @endforeach

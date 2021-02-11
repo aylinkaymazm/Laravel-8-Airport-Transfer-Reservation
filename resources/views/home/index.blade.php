@@ -27,58 +27,68 @@
                 {{--                AREA OF TRANSFER INFORMATION----}}
                 <div class="col-lg-4  col-md-6 header-right">
                     <h4 class="pb-30">Book Your Transfer Online!</h4>
-                    <form action="{{ route('user_transfer_add') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('user_transfer_store') }}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @include('home.message')
                         <div class="from-group">
                             <input class="form-control txt-field" type="text" name="name" placeholder="name">
                             <input class="form-control txt-field" type="email" name="email"   placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'">
-                        </div>
-                        <div class="form-group">
-                            <div class="default-select" id="default-select">
-                                <select>
-                                    <option value="" disabled selected hidden>From Location</option>
-                                    <option value="1">Sabiha Gökçen Airport</option>
-                                    <option value="1">Atatürk Airport</option>
-                                    <option value="1">D100 Bakırköy Marina Girişi</option>
-                                    <option value="1">Ortaköy ,Yıldız Parkı </option>
-                                    <option value="1">Koşuyolu Acıbadem </option>
-                                    <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
-                                    <option value="1">Beyoğlu Taksim Gezi Parkı Çıkışı </option>
+                            <div class="md-9">
+                                <select class="form-control" id="select" name="category_id">
+                                    @foreach ( $datalist as $rs )
+                                        <option value="{{ $rs->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
+                                    @endforeach
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="default-select" id="default-select2">
-                                <select>
-                                    <option value="" disabled selected hidden>To Location</option>
-                                    <option value="1">Sabiha Gökçen Airport</option>
-                                    <option value="1">Atatürk Airport</option>
-                                    <option value="1">D100 Bakırköy Marina Girişi</option>
-                                    <option value="1">Ortaköy ,Yıldız Parkı </option>
-                                    <option value="1">Koşuyolu Acıbadem</option>
-                                    <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
-                                    <option value="1">Beyoğlu Taksim Parkı Çıkışı </option>
-
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group dates-wrap">
-                                <input id="date" class="dates form-control"  placeholder="Date" type="text">
-                                <div class="input-group-prepend">
-                                    <span  class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
+                            <br>
+                            <div class="input-group-icon mt-6">
+                                <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                                <div class="form-select">
+                                    <select id="select" name="from_destination" class="form-control">
+                                        <option value="Airport">--From Destination</option>
+                                        <option value="Sabiha Gökçen Airport">Sabiha Gökçen Airport</option>
+                                        <option value="Atatürk Airport">Atatürk Airport</option>
+                                        <option value="D100 Bakırköy Marina Girişi">D100 Bakırköy Marina Girişi</option>
+                                        <option value="Ortaköy ,Yıldız Parkı Çıkışı ">Ortaköy ,Yıldız Parkı Çıkışı </option>
+                                        <option value="Koşuyolu Acıbadem">Koşuyolu Acıbadem</option>
+                                        <option value="Beşiktaş Deniz Kuvvetleri Müzesi">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                        <option value="Beyoğlu Taksim Parkı Çıkışı">Beyoğlu Taksim Parkı Çıkışı </option>
+                                    </select>
                                 </div>
                             </div>
+                            <div class="input-group-icon mt-6">
+                                <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
+                                <div class="form-select" >
+                                    <select id="select" name="to_destination" class="form-control">
+                                        <option value="address">--To Destination</option>
+                                        <option value="address">Sabiha Gökçen Airport</option>
+                                        <option value="address">Atatürk Airport</option>
+                                        <option value="address">D100 Bakırköy Marina Girişi</option>
+                                        <option value="address">Ortaköy ,Yıldız Parkı Çıkışı </option>
+                                        <option value="address">Koşuyolu Acıbadem</option>
+                                        <option value="address">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                        <option value="address">Beyoğlu Taksim Parkı Çıkışı </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-9">
+                                <input type="text" name="airline" placeholder="Airline" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Airline'" required="" class="form-control txt-field">
+                            </div>
+                            <div class="mt-9">
+                                <input type="number" name="flight_number" placeholder="Flight Number" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Flight Number'" required="" class="form-control txt-field">
+                            </div>
+                            <div class="mt-9">
+                                <input type="text" name="flight_arrived_date" placeholder="Flight Arrived Date" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Flight Arrived Date'" required="" class="form-control txt-field">
+                            </div>
+                            <div class="mt-9">
+                                <input type="text" name="flight_arrived_time" placeholder="Flight Arrived Time" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Flight Arrived Time'" required="" class="form-control txt-field">
+                            </div>
+                            <div class="mt-9">
+                                <input type="text" name="pick_up_time" placeholder="Pick Up Time" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Pick Up Time'" required="" class="form-control txt-field">
+                            </div>
+
                         </div>
 
-                        <div class="form-group">
-                            <div class="input-group dates-wrap">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="fa fa-user"></i></div>
-                                </div>
-                                <input name="ctl00$cntCenter$txtPass" value="1" id="ctl00_cntCenter_txtPass" class="form-control" type="number" min="1" max="46">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <button id="add-button" type="submit"class="btn btn-default btn-lg btn-block text-center text-uppercase">Make reservation</button>
                         </div>
@@ -122,7 +132,6 @@
         </div>
     </section>
     <!-- End services Area -->
-
     <!-- Start image-gallery Area -->
     <section class="image-gallery-area section-gap">
         <div class="container">
@@ -134,12 +143,15 @@
                 <div class="row">
                     <div class="col-lg-4 single-gallery">
                         <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
+                        <p>Our fleets consists of vehicles for the needs of our passengers.</p>
                     </div>
                     <div class="col-lg-4 single-gallery">
                         <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
+                        <p>Our fleets consists of vehicles for the needs of our passengers.</p>
                     </div>
                     <div class="col-lg-4 single-gallery">
                         <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
+                        <p>Our fleets consists of vehicles for the needs of our passengers.</p>
                     </div>
                 </div>
             @endforeach
@@ -268,8 +280,5 @@
         </div>
     </section>
     <!-- End home-calltoaction Area -->
-            </div>
-        </div>
-    </section>
     <!-- End latest-blog Area -->
 @endsection

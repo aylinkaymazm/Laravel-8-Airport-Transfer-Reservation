@@ -64,7 +64,6 @@
     </form>
     <hr>
 </div>
-<div style="margin-top: 10px; margin-left: 30px;">@include('home.message')</div>
 <!-- /page content -->
 </body>
 </html>

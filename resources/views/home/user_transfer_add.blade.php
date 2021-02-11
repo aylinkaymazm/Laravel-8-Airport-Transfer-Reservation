@@ -2,9 +2,7 @@
 
 @section('title','Transfer Products')
 
-
 @section('content')
-
 
     <!-- start banner Area -->
     <section class="banner-area relative about-banner" id="home">
@@ -30,8 +28,8 @@
             </div>
             <!-- Start home-about Area -->
             <div class="col-lg-9">
-                <h3 class="mb-30">Transfer Billing</h3>
-                <form action="{{ route('user_transfer_store')}}" method="post" enctype="multipart/form-data">
+                <h3 class="mb-30">Transfer </h3>
+                <form action="{{ route('user_transfer_add')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="md-9">
                         <input type="text" placeholder="Name" value="{{Auth::user()->name}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" required="" class="single-input">
@@ -41,49 +39,43 @@
                         <input type="text" placeholder="Email" value="{{Auth::user()->email}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required="" class="single-input">
                     </div>
                     <div class="md-9">
-                        <input type="text" placeholder="Phone" value="{{Auth::user()->phone}}"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'phone'" required="" class="single-input">
-                    </div>
-
-                    {{--<div class="md-9">
-                    <select class="form-control" name="category_id">
-                        @foreach ( $datalist as $rs )
-                            <option value="{{$rs->id}}">{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title)}}</option>
-                        @endforeach
-                    </select>
-                    </div>--}}
-
+                     <select class="form-control" id="select" name="product_id">
+                         @foreach ( $datalist as $rs )
+                             <option value="{{ $rs->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
+                         @endforeach
+                             $datalist = Category::with('children')->get();
+                     </select>
+                     </div>
                     <div class="input-group-icon mt-6">
                         <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                         <div class="form-select">
-                            <select id="from_destination" name="from_destination" class="form-control">
-                                <option value="1">--From Destination</option>
-                                <option value="1">Sabiha Gökçen Airport</option>
-                                <option value="1">Atatürk Airport</option>
-                                <option value="1">D100 Bakırköy Marina Girişi</option>
-                                <option value="1">Ortaköy ,Yıldız Parkı Çıkışı </option>
-                                <option value="1">Koşuyolu Acıbadem</option>
-                                <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
-                                <option value="1">Beyoğlu Taksim Parkı Çıkışı </option>
+                            <select id="select" name="from_destination" class="form-control">
+                                <option value="Airport">--From Destination</option>
+                                <option value="Airport">Sabiha Gökçen Airport</option>
+                                <option value="Airport">Atatürk Airport</option>
+                                <option value="address">D100 Bakırköy Marina Girişi</option>
+                                <option value="address">Ortaköy ,Yıldız Parkı Çıkışı </option>
+                                <option value="address">Koşuyolu Acıbadem</option>
+                                <option value="address">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                <option value="address">Beyoğlu Taksim Parkı Çıkışı </option>
                             </select>
                         </div>
                     </div>
                     <div class="input-group-icon mt-6">
                         <div class="icon"><i class="fa fa-plane" aria-hidden="true"></i></div>
                         <div class="form-select" >
-                            <select id="to_destination" name="to_destination" class="form-control">
-                                <option value="1">--To Destination</option>
-                                <option value="1">Sabiha Gökçen Airport</option>
-                                <option value="1">Atatürk Airport</option>
-                                <option value="1">D100 Bakırköy Marina Girişi</option>
-                                <option value="1">Ortaköy ,Yıldız Parkı Çıkışı </option>
-                                <option value="1">Koşuyolu Acıbadem</option>
-                                <option value="1">Beşiktaş Deniz Kuvvetleri Müzesi</option>
-                                <option value="1">Beyoğlu Taksim Parkı Çıkışı </option>
+                            <select id="select" name="to_destination" class="form-control">
+                                <option value="address">--To Destination</option>
+                                <option value="address">Sabiha Gökçen Airport</option>
+                                <option value="address">Atatürk Airport</option>
+                                <option value="address">D100 Bakırköy Marina Girişi</option>
+                                <option value="address">Ortaköy ,Yıldız Parkı Çıkışı </option>
+                                <option value="address">Koşuyolu Acıbadem</option>
+                                <option value="address">Beşiktaş Deniz Kuvvetleri Müzesi</option>
+                                <option value="address">Beyoğlu Taksim Parkı Çıkışı </option>
                             </select>
                         </div>
                     </div>
-
-
                     <div class="mt-9">
                         <input type="text" name="airline" placeholder="Airline" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Airline'" required="" class="single-input-primary">
                     </div>

@@ -25,25 +25,12 @@
                     <li class="menu-active"><a href="{{route('references')}}">References</a></li>
                     <li class="menu-active"><a href="{{route('contact')}}">Contact</a></li>
 
-                    <li class="menu-has-children"><a href="" class="sf-with-ul">Service</a>
-                        <ul style="display: none;">
-                            <li><a href="blog-home.html">Transfer Zones</a></li>
-                            <li><a href="blog-single.html">Airport Tranfers</a></li>
-                            <li><a href="blog-single.html">Transfer Vehicles</a></li>
-                            <li><a href="blog-single.html">Corporate Sales</a></li>
-                            <li class="menu-has-children"><a href="" class="sf-with-ul">International Flights Transfer</a>
-                                <ul style="display: none;">
-                                    <li><a href="#">John F. Kennedy Airport</a></li>
-                                    <li><a href="#">Barcelona Airport</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-has-children"><a href="" class="sf-with-ul">Domestic Flights Transfer</a>
-                                <ul style="display: none;">
-                                    <li><a href="#">Atatürk Airport</a></li>
-                                    <li><a href="#">Sabiha Gökçen Airport</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                    <li class="menu-active"><a href="" class="sf-with-ul">Categories</a>
+                        <select class="form-control" id="select" name="product_id">
+                            @foreach ( $datalist as $rs )
+                                <option value="{{ $rs->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
+                            @endforeach
+                        </select>
                     </li>
 
                     <li class="hidden-sm hidden-xs el-shopping-cart">
@@ -58,7 +45,7 @@
         @auth
             <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                 <a href="#"><strong class="text-uppercase">{{Auth::user()->name}}
-                    {{Auth::user()->roles->pluck('name')}}</strong></a>
+                        {{Auth::user()->roles->pluck('name')}}</strong></a>
                 <li class="nav-item"><a href="{{route('myprofile')}}" class="nav-link"  title="Login">My Account</a></li>
                 <li class="nav-item"><a href="{{route('logout')}}" class="nav-link"  title="Logout">LogOut</a></li>
                 </li>
@@ -70,5 +57,4 @@
         @endguest
     </div>
 
-    </div>
 </header>

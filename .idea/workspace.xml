@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment=" User Admin Role Permission">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_roles.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/user_show.blade.php" afterDir="false" />
+    <list default="true" id="e9a9168f-dc75-479d-8b7e-2da31f495b06" name="Default Changelist" comment=" Admin Role Management">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransferController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransferController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Transfer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transfer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/transfer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/transfer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/transfer_items.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/transfer_items.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user_edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/user_roles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/user_roles.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/_header.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/select_car.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/select_car.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_transfer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_transfer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_transfer_add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_transfer_add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/user_transfer_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/user_transfer_item.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +251,7 @@
       <workItem from="1612789594001" duration="22000" />
       <workItem from="1612811911466" duration="1572000" />
       <workItem from="1612948100981" duration="351000" />
-      <workItem from="1612948489423" duration="19269000" />
+      <workItem from="1612948489423" duration="67541000" />
     </task>
     <task id="LOCAL-00001" summary="template added">
       <created>1608588525500</created>
@@ -421,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612749727179</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary=" Admin Role Management">
+      <created>1612997084672</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1612997084672</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,7 +476,8 @@
     <MESSAGE value="Transfer Rezervasion saved database" />
     <MESSAGE value="Admin transfer panel management" />
     <MESSAGE value=" User Admin Role Permission" />
-    <option name="LAST_COMMIT_MESSAGE" value=" User Admin Role Permission" />
+    <MESSAGE value=" Admin Role Management" />
+    <option name="LAST_COMMIT_MESSAGE" value=" Admin Role Management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -471,16 +486,6 @@
           <url>file://$PROJECT_DIR$/resources/views/admin/product_edit.blade.php</url>
           <line>119</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php</url>
-          <line>21</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryController.php</url>
-          <line>24</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
