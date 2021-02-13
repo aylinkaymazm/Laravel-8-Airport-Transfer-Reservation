@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -15,8 +17,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $datalist = User::all();
-        return view('admin.user', ['datalist' => $datalist]);
+        $datalist= User::all();
+        return view('admin.user', ['datalist'=>$datalist]);
     }
 
     /**
@@ -46,11 +48,12 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user,$id)
+    public function show(User $user, $id)
     {
-        $data = User::find($id);
-        $datalist = Role::all()->sortBy('name');
-        return view('admin.user_show', ['data' => $data, 'datalist' => $datalist]);
+        $user = User::find($id);
+        $rolelist = Role::all()->sortBy('name');
+
+        return view('admin.user_show', ['user' => $user, 'rolelist' => $rolelist]);
     }
 
     /**
@@ -59,10 +62,10 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user,$id)
+    public function edit(User $user, $id)
     {
-        $data = User::find($id);
-        return view('admin.user_edit', ['data' => $data]);
+        $user = User::find($id);
+        return view('admin.user_edit', ['user' => $user]);
     }
 
     /**
@@ -72,18 +75,16 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user,$id)
+    public function update(Request $request, User $user, $id)
     {
         $user = User::find($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->phone = $request->input('phone');
         $user->address = $request->input('address');
-        if($request->file('image')!=null){
-            $user->profile_photo_path = Storage::putFile('profile-photos', $request->file('image'));
-        }
         $user->save();
-        return redirect()->route('admin_users')->with('success','User Information Updated.');
+        return redirect()->route('admin_user')->with('success','User Information Updated.');
+
     }
 
     /**
@@ -92,15 +93,18 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user,$id)
+    public function destroy(User $user, $id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        $max = DB::table('users')->max('id') + 1;
+        return redirect()->route('admin_user', ['user' => $user]);
     }
 
     public function user_roles(User $user, $id){
-        $data = User::find($id);
-        $datalist = Role::all()->sortBy('name');
-        return view('admin.user_roles', ['data' => $data, 'datalist' => $datalist]);
+        $user = User::find($id);
+        $rolelist = Role::all()->sortBy('name');
+        return view('admin.user_roles', ['user' => $user, 'rolelist' => $rolelist]);
     }
 
     public function user_role_store(Request $request, User $user, $id){
@@ -115,6 +119,4 @@ class UserController extends Controller
         $user->roles()->detach($roleid);
         return redirect()->back()->with('fail','Role removed from user.');
     }
-
-
 }

@@ -4,7 +4,6 @@
 
 @section('content')
 
-
     <!-- start banner Area -->
     <section class="banner-area relative about-banner" id="home">
         <div class="overlay overlay-bg"></div>

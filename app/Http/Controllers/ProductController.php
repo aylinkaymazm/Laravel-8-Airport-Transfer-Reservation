@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Setting;
-use App\Models\Transfer;
-use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class UserController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-
-        return view('home.user_profile');
+        return view('home.product_detail');
     }
 
     /**
@@ -26,30 +22,28 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function create()
     {
-        //
-    }
 
+    }
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\User $user
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Product $product)
     {
         //
     }
@@ -57,36 +51,36 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\User $user
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Product $product,$id)
     {
-        //
+        $data = Product::find($id);
+        $datalist = Category::with('children')->get();
+        return view('home.product_detail',['data' => $data,'datalist' => $datalist]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\Models\User $user
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Product $product,$id)
     {
-        //
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\User $user
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user,$id)
+    public function destroy(Product $product,$id)
     {
-        User::destroy($id);
-        return back()->with("success","Başarıyla Sillindi");
+
     }
 }
-

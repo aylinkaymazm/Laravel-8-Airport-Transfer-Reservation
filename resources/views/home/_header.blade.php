@@ -24,15 +24,6 @@
                     <li class="menu-active"><a href="{{route('aboutus')}}">About US</a></li>
                     <li class="menu-active"><a href="{{route('references')}}">References</a></li>
                     <li class="menu-active"><a href="{{route('contact')}}">Contact</a></li>
-
-                    <li class="menu-active"><a href="" class="sf-with-ul">Categories</a>
-                        <select class="form-control" id="select" name="product_id">
-                            @foreach ( $datalist as $rs )
-                                <option value="{{ $rs->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
-                            @endforeach
-                        </select>
-                    </li>
-
                     <li class="hidden-sm hidden-xs el-shopping-cart">
                         <a href="{{ route('user_transfers') }}"><i class="fa fa-shopping-cart"><br></i>     Rezervasyon</a>
                     </li>
@@ -46,7 +37,7 @@
             <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
                 <a href="#"><strong class="text-uppercase">{{Auth::user()->name}}
                         {{Auth::user()->roles->pluck('name')}}</strong></a>
-                <li class="nav-item"><a href="{{route('myprofile')}}" class="nav-link"  title="Login">My Account</a></li>
+                <li><a href="{{route('myprofile')}}" class="nav-link">My Account</a></li>
                 <li class="nav-item"><a href="{{route('logout')}}" class="nav-link"  title="Logout">LogOut</a></li>
                 </li>
             </div>

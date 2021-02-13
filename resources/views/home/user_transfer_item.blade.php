@@ -8,6 +8,9 @@
     <link href="{{ asset('assets') }}/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="{{ asset('assets') }}/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!--Ckeditör-->
+        <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+
 
 </head>
 <body>
@@ -38,7 +41,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row ">
-                                        <label class="control-label col-md-1 col-sm-1 ">Title</label>
+                                        <label class="control-label col-md-1 col-sm-1 ">from_destination</label>
                                         <div class="col-md-11 col-sm-11 ">
                                             <input type="text" name="from_destination" class="form-control" placeholder="Default Input" value="{{$data->from_destination}}">
                                         </div>

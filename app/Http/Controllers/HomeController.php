@@ -9,6 +9,7 @@ use App\Models\Setting;
 use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -43,9 +44,8 @@ class HomeController extends Controller
 
     public function product($id)
     {
-        $data = Product::find($id);
-        $datalist =Product::where('product_id',$id)->get();
-        return view('home.user_transfer', ['data'=>$data,'datalist'=>$datalist]);
+        $datalist = DB::table('products')->where('id', '=', $id)->get();
+        return view('home.product_detail', ['datalist'=>$datalist]);
     }
 
     public function transfer()

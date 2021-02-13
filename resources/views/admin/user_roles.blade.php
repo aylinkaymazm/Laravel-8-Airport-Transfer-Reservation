@@ -36,9 +36,9 @@
                 @foreach($data->roles as $row)
                     <td> {{ $row->name }} </td>
                     <td>
-                        <a href="{{ route('admin_user_role_delete', ['userid'=>$data->id, 'roleid'=>$row->id]) }}" onclick="return confirm('You are removing this role from the user! Are you sure?')">
+                        <a href="{{ route('admin_user_role_delete', ['userid'=>$row->id, 'roleid'=>$row->id]) }}" onclick="return confirm('You are removing this role from the user! Are you sure?')">
                             <button class="item" data-toggle="tooltip" data-placement="top" title="Remove">
-                                <i style="margin-right:15px; margin-left: 5px; font-size: 30px; color: #cd5c5c;" class="fa fa-play-circle"></i>
+                                <i style="margin-right:15px; margin-left: 5px; font-size: 30px; color: #cd5c5c;" class="button-a"></i>
                             </button>
                         </a>
                     </td>
@@ -56,7 +56,7 @@
                 @endforeach
             </select>
             <br>
-            <button id="add-button" type="submit" class="btn btn-lg btn-info btn-block">
+            <button id="add-button" type="submit" class="button">
                 <i class="fa fa-lg"></i>&nbsp;
                 <span>Add Role</span>
             </button>

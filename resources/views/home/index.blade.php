@@ -139,19 +139,25 @@
                 <h1>Car Gallery that we like to share</h1>
                 <p>Who are in extremely love with eco friendly system.</p>
             </div>
+
+
+
+
             @foreach($cars as $rs)
                 <div class="row">
                     <div class="col-lg-4 single-gallery">
-                        <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
-                        <p>Our fleets consists of vehicles for the needs of our passengers.</p>
+                        <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal">
+                            <img class="img-fluid" src="{{Storage::url($rs->image)}}" alt="">
+                        </a>
+                        <p>Our fleets consists of vehicles for the needs of our passengers.</p><a href="{{route('product', ['id'=>$rs->id])}}" class="btn button">Detail</a>
                     </div>
                     <div class="col-lg-4 single-gallery">
                         <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
-                        <p>Our fleets consists of vehicles for the needs of our passengers.</p>
+                        <p>Our fleets consists of vehicles for the needs of our passengers.</p><a href="{{route('product', ['id'=>$rs->id])}}" class="btn button">Detail</a>
                     </div>
                     <div class="col-lg-4 single-gallery">
                         <a href="{{route('product',['id'=> $rs->id])}}" class="img-gal"><img class="img-fluid" src="{{Storage::url($rs->image)}}" alt=""></a>
-                        <p>Our fleets consists of vehicles for the needs of our passengers.</p>
+                        <p>Our fleets consists of vehicles for the needs of our passengers.</p><a href="{{route('product', ['id'=>$rs->id])}}" class="btn button">Detail</a>
                     </div>
                 </div>
             @endforeach

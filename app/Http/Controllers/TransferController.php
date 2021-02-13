@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class TransferController extends Controller
 {
@@ -100,6 +101,7 @@ class TransferController extends Controller
     public function update(Request $request, Transfer $transfer,$id)
     {
         $data = Transfer::find($id);
+        $data->user_id = Auth::id();
         $data->category_id=$request->input('category_id');
         $data->name = $request->input('name');
         $data->email = $request->input('email');
@@ -124,8 +126,9 @@ class TransferController extends Controller
      * @param  \App\Models\Transfer  $transfer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Transfer $transfer)
+    public function destroy(Transfer $transfer,$id)
     {
-        //
+        Transfer::destroy($id);
+        return back()->with("success","Başarıyla Sillindi");
     }
 }

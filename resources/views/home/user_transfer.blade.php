@@ -52,7 +52,7 @@
                             <tbody>
                             @foreach ($datalist as $rs)
                                 <tr>
-                                    <td>{{Auth::user()->id}}</td>
+                                    <td>{{$rs ->id}}</td>
                                     <td>{{Auth::user()->name}}</td>
                                     <td>{{Auth::user()->email}}</td>
                                     <td>{{ $rs->note }}</td>
@@ -74,7 +74,7 @@
                                             </a>
                                         </div>
                                         <div class="table-data-feature">
-                                            <a href="{{ route('user_transfer_delete', ['id'=>$rs->id]) }}" onclick="return confirm('Delete! Are you sure?')">
+                                            <a href="{{route('user_transfer_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete! Are you sure?')">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                         </div>

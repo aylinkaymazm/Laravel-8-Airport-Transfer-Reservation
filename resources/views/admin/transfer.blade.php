@@ -56,7 +56,9 @@
                                                     <td>{{ $rs->pick_up_time }}</td>
                                                     <td>{{ $rs->created_at }}</td>
                                                     <td><a href="{{route('admin_transfer_edit',['id' => $rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=600')" >
-                                                            <img src="{{asset('assets/admin/images')}}/edit.png" height="35"></a>
+                                                            <img src="{{asset('assets/admin/images')}}/edit.png" height="35"></a><td>
+                                                    <td><a href="{{route('admin_transfer_delete', ['id'=> $rs->id])}}" onclick="return confirm('Delete! Are you sure?')">
+                                                            <img src="{{asset('assets/admin/images')}}/delete.png" height="25"></a><td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

@@ -1,4 +1,17 @@
-
+<html>
+<head>
+    <title>Image Gallery</title><!-- Bootstrap -->
+    <link href="{{ asset('assets') }}/admin/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{ asset('assets') }}/admin/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{ asset('assets') }}/admin/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{{ asset('assets') }}/admin/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!--Ckeditör-->
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+</head>
+<body>
 <!-- page content -->
 <div class="page-title">
     <div class="title_left">
@@ -40,5 +53,5 @@
         </div>
     </div>
 </div>
-<!-- /page content
-
+</body>
+</html>
